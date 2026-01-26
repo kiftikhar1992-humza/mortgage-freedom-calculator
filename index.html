@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Freedom Calculator - Pay Off Your Mortgage Early & Save Thousands</title>
+    <meta name="description" content="Free mortgage payoff calculator. See how extra payments, lump sums, or bi-weekly payments can help you become mortgage-free years sooner and save thousands in interest.">
+    <meta name="keywords" content="mortgage payoff calculator, early mortgage payoff, extra mortgage payment calculator, mortgage freedom, bi-weekly mortgage calculator, pay off mortgage early, mortgage amortization calculator">
+    <meta name="author" content="Mortgage Freedom Calculator">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mortgage Freedom Calculator - Pay Off Your Mortgage Early">
+    <meta property="og:description" content="Free calculator to see how extra payments can help you become mortgage-free years sooner and save thousands in interest.">
+    <meta property="og:image" content="https://example.com/mortgage-calculator-preview.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mortgage Freedom Calculator - Pay Off Your Mortgage Early">
+    <meta name="twitter:description" content="Free calculator to see how extra payments can help you become mortgage-free years sooner and save thousands in interest.">
+
+    <!-- Structured Data - WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Mortgage Freedom Calculator",
+        "description": "Calculate how to pay off your mortgage early with extra payments, lump sums, or bi-weekly payments. See your potential savings and accelerated payoff timeline.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Extra monthly payment calculator",
+            "Lump sum payment analysis",
+            "Bi-weekly payment option",
+            "Amortization schedule",
+            "Interest savings calculator",
+            "Visual payoff chart"
+        ]
+    }
+    </script>
+
+    <!-- Structured Data - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do extra mortgage payments save money?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Extra payments go directly toward your principal balance, reducing the amount of interest charged over the life of the loan. Even small extra payments can save tens of thousands of dollars and shorten your loan by years."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I pay off my mortgage early or invest the money?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on your interest rate and risk tolerance. If your mortgage rate is higher than expected investment returns (after taxes), paying it off early is often better. Many people value the peace of mind of being debt-free, regardless of the math."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does bi-weekly mortgage payment help?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Bi-weekly payments mean you pay half your monthly payment every two weeks. Since there are 52 weeks in a year, you make 26 half-payments (13 full payments) instead of 12. This extra payment each year can shave years off your mortgage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the fastest way to pay off a mortgage?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Combine multiple strategies: make a lump sum payment to reduce principal immediately, switch to bi-weekly payments, and add extra to each payment. Even an extra $100-200 per month can dramatically reduce your payoff time."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #4fc3f7;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .card h2 {
+            color: #4fc3f7;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .info-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .info-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        @media (max-width: 700px) {
+            .info-grid-3, .info-grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .info-item {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .info-label {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .info-value {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #fff;
+        }
+        .info-input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .info-input:focus {
+            border-color: #4fc3f7;
+            box-shadow: 0 0 0 2px rgba(79, 195, 247, 0.2);
+        }
+        .info-input::placeholder {
+            color: #666;
+            font-weight: 400;
+        }
+        .input-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .input-row select {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            padding: 10px 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            outline: none;
+            cursor: pointer;
+        }
+        .input-row select:focus {
+            border-color: #4fc3f7;
+        }
+        .input-row select option {
+            background: #1a1a2e;
+            color: #fff;
+        }
+        .input-prefix {
+            color: #888;
+            font-size: 1.1rem;
+        }
+        .slider-container {
+            margin: 20px 0;
+        }
+        .slider-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .slider-label {
+            font-size: 1rem;
+            color: #ccc;
+        }
+        .age-display {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4fc3f7;
+        }
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+            -webkit-appearance: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #4fc3f7;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(79, 195, 247, 0.5);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #4fc3f7;
+            cursor: pointer;
+            border: none;
+        }
+        .age-markers {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+        .results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .result-box {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .result-box.highlight {
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.2) 0%, rgba(79, 195, 247, 0.05) 100%);
+            border: 1px solid rgba(79, 195, 247, 0.3);
+        }
+        .result-label {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .result-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #4fc3f7;
+        }
+        .result-value.green {
+            color: #66bb6a;
+        }
+        .result-sub {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: right;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .comparison-table th {
+            color: #888;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+        .comparison-table th:first-child,
+        .comparison-table td:first-child {
+            text-align: left;
+        }
+        .comparison-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .row-highlight {
+            background: rgba(79, 195, 247, 0.1);
+        }
+        .row-original {
+            color: #888;
+        }
+        .savings-banner {
+            background: linear-gradient(135deg, rgba(102, 187, 106, 0.2) 0%, rgba(102, 187, 106, 0.05) 100%);
+            border: 1px solid rgba(102, 187, 106, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .savings-banner h3 {
+            color: #66bb6a;
+            margin-bottom: 10px;
+        }
+        .savings-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #66bb6a;
+        }
+        .warning {
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px solid rgba(255, 152, 0, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            color: #ffb74d;
+            font-size: 0.9rem;
+        }
+        .input-hint {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        /* Getting started prompt */
+        .getting-started {
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.15) 0%, rgba(79, 195, 247, 0.05) 100%);
+            border: 1px solid rgba(79, 195, 247, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .getting-started h3 {
+            color: #4fc3f7;
+            margin-bottom: 10px;
+        }
+        .getting-started p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+        .getting-started.hidden {
+            display: none;
+        }
+
+        /* Chart */
+        .chart-container {
+            margin-top: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .chart-legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 15px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        .legend-dot.original {
+            background: #888;
+        }
+        .legend-dot.accelerated {
+            background: #4fc3f7;
+        }
+        canvas {
+            width: 100%;
+            height: 300px;
+            cursor: crosshair;
+        }
+
+        /* Chart tooltip */
+        .chart-tooltip {
+            position: fixed;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.85rem;
+            color: #fff;
+            pointer-events: none;
+            z-index: 1000;
+            display: none;
+            line-height: 1.5;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Amortization */
+        .amortization-toggle {
+            background: none;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #4fc3f7;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .amortization-toggle:hover {
+            background: rgba(79, 195, 247, 0.1);
+            border-color: #4fc3f7;
+        }
+        .amortization-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .amortization-content.open {
+            max-height: 2000px;
+        }
+        .amortization-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .amortization-table th,
+        .amortization-table td {
+            padding: 10px 8px;
+            text-align: right;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .amortization-table th {
+            color: #888;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+            background: #1a1a2e;
+        }
+        .amortization-table th:first-child,
+        .amortization-table td:first-child {
+            text-align: left;
+        }
+        .milestone {
+            background: rgba(102, 187, 106, 0.1);
+        }
+        .amortization-scroll {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* Share button */
+        .share-btn {
+            background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+            border: none;
+            color: #1a1a2e;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .share-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+        }
+        .share-btn:active {
+            transform: translateY(0);
+        }
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #333;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        /* Hidden sections until data entered */
+        .needs-data {
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .needs-data.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Form sections */
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section:last-child {
+            margin-bottom: 0;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #4fc3f7;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(79, 195, 247, 0.2);
+        }
+        .section-label.optional {
+            color: #888;
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+        .section-label.calculated {
+            color: #66bb6a;
+            border-bottom-color: rgba(102, 187, 106, 0.2);
+        }
+        .info-item.required .info-label::after {
+            content: " *";
+            color: #4fc3f7;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 20px;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 18px 0;
+            text-align: left;
+            cursor: pointer;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+        .faq-question:hover {
+            color: #4fc3f7;
+        }
+        .faq-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            transition: transform 0.3s;
+            color: #4fc3f7;
+        }
+        .faq-item.open .faq-icon {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s;
+            color: #aaa;
+            line-height: 1.6;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 300px;
+            padding-bottom: 18px;
+        }
+
+        /* Top nav */
+        .top-nav {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .top-nav a {
+            color: #4fc3f7;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .top-nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Blog links */
+        .blog-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .blog-link {
+            display: block;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: border-color 0.2s, background 0.2s;
+        }
+        .blog-link:hover {
+            border-color: rgba(79, 195, 247, 0.3);
+            background: rgba(79, 195, 247, 0.05);
+        }
+        .blog-link-title {
+            display: block;
+            color: #4fc3f7;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+        .blog-link-desc {
+            display: block;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        /* Intro section */
+        .intro-text {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        .site-footer p {
+            margin-bottom: 8px;
+        }
+        .footer-links {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px 20px;
+        }
+        .footer-links a {
+            color: #4fc3f7;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header>
+            <nav class="top-nav">
+                <a href="blog/">Read Our Blog</a>
+            </nav>
+            <h1>Mortgage Freedom Calculator</h1>
+            <p class="subtitle">Plan your path to being mortgage-free</p>
+        </header>
+
+        <p class="intro-text">
+            Discover how extra payments can help you pay off your mortgage years earlier and save thousands in interest.
+            Enter your mortgage details below to see the impact of additional monthly payments, lump sum contributions,
+            or switching to bi-weekly payments. Our free calculator shows your personalized amortization schedule and total savings.
+        </p>
+
+        <div class="getting-started" id="gettingStarted">
+            <h3>Welcome! Let's get started</h3>
+            <p>Enter your mortgage details below to see how extra payments can help you become debt-free sooner.</p>
+        </div>
+
+        <div class="card">
+            <h2>Mortgage Details</h2>
+
+            <!-- Required Information -->
+            <div class="form-section">
+                <div class="section-label">Required Information</div>
+                <div class="info-grid-3">
+                    <div class="info-item required">
+                        <div class="info-label">Your New Mortgage</div>
+                        <div class="input-row">
+                            <span class="input-prefix">$</span>
+                            <input type="text" class="info-input" id="currentBalance" value="" placeholder="e.g. 350,000">
+                        </div>
+                    </div>
+                    <div class="info-item required">
+                        <div class="info-label">Interest Rate</div>
+                        <div class="input-row">
+                            <input type="text" class="info-input" id="interestRate" value="" placeholder="e.g. 6.5">
+                            <span class="input-prefix">%</span>
+                        </div>
+                    </div>
+                    <div class="info-item required">
+                        <div class="info-label">Your Current Age</div>
+                        <input type="number" class="info-input" id="currentAge" value="" placeholder="e.g. 35" min="18" max="100">
+                    </div>
+                </div>
+                <div class="info-grid-2" style="margin-top: 15px;">
+                    <div class="info-item">
+                        <div class="info-label">Today's Date</div>
+                        <div class="input-row">
+                            <select id="currentMonth">
+                                <option value="1">Jan</option>
+                                <option value="2">Feb</option>
+                                <option value="3">Mar</option>
+                                <option value="4">Apr</option>
+                                <option value="5">May</option>
+                                <option value="6">Jun</option>
+                                <option value="7">Jul</option>
+                                <option value="8">Aug</option>
+                                <option value="9">Sep</option>
+                                <option value="10">Oct</option>
+                                <option value="11">Nov</option>
+                                <option value="12">Dec</option>
+                            </select>
+                            <input type="number" class="info-input" id="currentYear" min="2020" max="2100" style="width: 100px;">
+                        </div>
+                        <div class="input-hint">Auto-filled, adjust if needed</div>
+                    </div>
+                    <div class="info-item required">
+                        <div class="info-label">Projected Payoff Date</div>
+                        <div class="input-row">
+                            <select id="payoffMonth">
+                                <option value="1">Jan</option>
+                                <option value="2">Feb</option>
+                                <option value="3">Mar</option>
+                                <option value="4">Apr</option>
+                                <option value="5">May</option>
+                                <option value="6">Jun</option>
+                                <option value="7">Jul</option>
+                                <option value="8">Aug</option>
+                                <option value="9">Sep</option>
+                                <option value="10">Oct</option>
+                                <option value="11">Nov</option>
+                                <option value="12">Dec</option>
+                            </select>
+                            <input type="number" class="info-input" id="payoffYear" value="" placeholder="e.g. 2054" min="2024" max="2100" style="width: 100px;">
+                        </div>
+                        <div class="input-hint">When your loan ends if you make minimum payments</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Optional: Escrow Details -->
+            <div class="form-section">
+                <div class="section-label optional">Optional - Escrow Details</div>
+                <div class="info-grid-2">
+                    <div class="info-item">
+                        <div class="info-label">Monthly Property Tax</div>
+                        <div class="input-row">
+                            <span class="input-prefix">$</span>
+                            <input type="text" class="info-input" id="propertyTax" value="" placeholder="e.g. 350">
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Monthly Insurance</div>
+                        <div class="input-row">
+                            <span class="input-prefix">$</span>
+                            <input type="text" class="info-input" id="insurance" value="" placeholder="e.g. 150">
+                        </div>
+                        <div class="input-hint">Homeowner's insurance</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculated Results -->
+            <div class="form-section">
+                <div class="section-label calculated">Calculated Results</div>
+                <div class="info-grid-2">
+                    <div class="info-item">
+                        <div class="info-label">Monthly Payment</div>
+                        <div class="info-value" id="monthlyPayment">--</div>
+                        <div class="input-hint" id="monthlyPaymentHint">Principal & interest</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Age at Projected Payoff</div>
+                        <div class="info-value" id="ageAtPayoff">--</div>
+                        <div class="input-hint">Without extra payments</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card needs-data" id="targetSection">
+            <h2>Target Payoff Age</h2>
+            <div class="slider-container">
+                <div class="slider-header">
+                    <span class="slider-label">I want to be mortgage-free by age:</span>
+                    <span class="age-display" id="targetAge">--</span>
+                </div>
+                <input type="range" id="ageSlider" min="30" max="80" value="55">
+                <div class="age-markers" id="ageMarkers">
+                    <span>30</span>
+                    <span>40</span>
+                    <span>50</span>
+                    <span>60</span>
+                    <span>70</span>
+                    <span>80</span>
+                </div>
+            </div>
+
+            <div class="results">
+                <div class="result-box highlight">
+                    <div class="result-label">Extra Monthly Payment Needed</div>
+                    <div class="result-value" id="extraPayment">--</div>
+                    <div class="result-sub" id="extraPaymentSub">on top of your regular payment</div>
+                </div>
+                <div class="result-box highlight">
+                    <div class="result-label">New Total Monthly Payment</div>
+                    <div class="result-value" id="totalPayment">--</div>
+                    <div class="result-sub" id="paymentFrequency">principal & interest only</div>
+                </div>
+                <div class="result-box">
+                    <div class="result-label">Years to Payoff</div>
+                    <div class="result-value" id="yearsToPayoff">--</div>
+                    <div class="result-sub" id="payoffDate">Payoff: ---</div>
+                </div>
+                <div class="result-box">
+                    <div class="result-label">Total Interest Saved</div>
+                    <div class="result-value green" id="interestSaved">--</div>
+                    <div class="result-sub">vs. original schedule</div>
+                </div>
+            </div>
+
+            <div id="warningBox" class="warning" style="display: none;"></div>
+        </div>
+
+        <div class="card needs-data" id="chartSection">
+            <h2>Balance Over Time</h2>
+            <div class="chart-container">
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <div class="legend-dot original"></div>
+                        <span>Original Schedule</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot accelerated"></div>
+                        <span>Accelerated Payoff</span>
+                    </div>
+                </div>
+                <canvas id="balanceChart"></canvas>
+            </div>
+        </div>
+
+        <div class="card needs-data" id="comparisonSection">
+            <h2>Payment Comparison</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Scenario</th>
+                        <th>Monthly Payment</th>
+                        <th>Payoff Age</th>
+                        <th>Total Interest</th>
+                        <th>Total Paid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row-original">
+                        <td>Original Schedule</td>
+                        <td id="origPaymentCell">--</td>
+                        <td id="origAgeCell">--</td>
+                        <td id="origInterest">--</td>
+                        <td id="origTotal">--</td>
+                    </tr>
+                    <tr class="row-highlight">
+                        <td>With Extra Payment</td>
+                        <td id="newPayment">--</td>
+                        <td id="newAge">--</td>
+                        <td id="newInterest">--</td>
+                        <td id="newTotal">--</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card needs-data" id="amortSection">
+            <h2>
+                Amortization Schedule
+                <button class="amortization-toggle" id="amortToggle">Show Details</button>
+            </h2>
+            <div class="amortization-content" id="amortContent">
+                <div class="amortization-scroll">
+                    <table class="amortization-table">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Age</th>
+                                <th>Starting Balance</th>
+                                <th>Interest Paid</th>
+                                <th>Principal Paid</th>
+                                <th>Ending Balance</th>
+                            </tr>
+                        </thead>
+                        <tbody id="amortBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="savings-banner needs-data" id="savingsSection">
+            <h3>Your Potential Savings</h3>
+            <div class="savings-amount" id="totalSavings">--</div>
+            <p style="color: #888; margin-top: 10px;" id="savingsNote">Enter your mortgage details above to see your savings potential.</p>
+            <button class="share-btn" id="shareBtn" style="margin-top: 15px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                    <polyline points="16 6 12 2 8 6"></polyline>
+                    <line x1="12" y1="2" x2="12" y2="15"></line>
+                </svg>
+                Share This Scenario
+            </button>
+        </div>
+
+        <!-- Learn More Section -->
+        <section class="card">
+            <h2>Learn More</h2>
+            <p style="color: #aaa; margin-bottom: 20px;">Dive deeper into mortgage payoff strategies with our guides:</p>
+            <div class="blog-links">
+                <a href="blog/how-extra-payments-work/" class="blog-link">
+                    <span class="blog-link-title">How Do Extra Mortgage Payments Work?</span>
+                    <span class="blog-link-desc">Understand the math behind why extra payments save so much</span>
+                </a>
+                <a href="blog/what-age-pay-off-mortgage/" class="blog-link">
+                    <span class="blog-link-title">What Age Should You Pay Off Your Mortgage?</span>
+                    <span class="blog-link-desc">Find the right payoff target for your situation</span>
+                </a>
+                <a href="blog/how-much-save-paying-early/" class="blog-link">
+                    <span class="blog-link-title">How Much Can You Save Paying Off Early?</span>
+                    <span class="blog-link-desc">See real examples of potential interest savings</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="card faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do extra mortgage payments save money?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Extra payments go directly toward your principal balance, reducing the amount of interest charged over the life of the loan. Since interest is calculated on your remaining balance, a lower balance means less interest accrues each month. Even small extra payments of $100-200 per month can save tens of thousands of dollars and shorten your loan by several years.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Should I pay off my mortgage early or invest the money?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    It depends on your mortgage interest rate, expected investment returns, and personal risk tolerance. If your mortgage rate is 7% and you expect 8% returns from investments, the math slightly favors investing. However, paying off your mortgage provides a guaranteed "return" equal to your interest rate with zero risk. Many people value the peace of mind and financial freedom of being debt-free, regardless of the pure mathematics.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How does bi-weekly mortgage payment help?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    With bi-weekly payments, you pay half your monthly payment every two weeks. Since there are 52 weeks in a year, you make 26 half-payments, which equals 13 full monthly payments instead of 12. That extra payment each year goes entirely toward principal, typically shaving 4-6 years off a 30-year mortgage and saving tens of thousands in interest.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What is the fastest way to pay off a mortgage?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Combine multiple strategies for maximum impact: Start with a lump sum payment (from savings, bonus, or tax refund) to immediately reduce your principal. Then switch to bi-weekly payments for an automatic extra payment each year. Finally, add whatever extra you can afford to each payment. Use this calculator to see how combining these strategies can dramatically accelerate your payoff timeline.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is there a penalty for paying off my mortgage early?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Most modern mortgages do not have prepayment penalties, but it's important to check your loan documents. Prepayment penalties were more common before 2014 but are now restricted by federal regulations for most residential mortgages. If your loan does have a penalty, it typically only applies during the first few years and may still be worth paying if your interest savings are greater.
+                </div>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <div class="footer-links">
+                <a href="blog/">Blog</a>
+                <a href="blog/how-extra-payments-work/">How Extra Payments Work</a>
+                <a href="blog/what-age-pay-off-mortgage/">Best Payoff Age</a>
+                <a href="blog/how-much-save-paying-early/">Savings Examples</a>
+            </div>
+            <p>This calculator provides estimates for educational purposes only. Actual results may vary based on your specific loan terms.</p>
+            <p>Always consult with your lender before making extra payments to ensure they are applied to principal.</p>
+        </footer>
+    </main>
+
+    <div class="toast" id="toast">Link copied to clipboard!</div>
+    <div class="chart-tooltip" id="chartTooltip"></div>
+
+    <script>
+        // Initialize current date from browser
+        const today = new Date();
+        document.getElementById('currentMonth').value = today.getMonth() + 1;
+        document.getElementById('currentYear').value = today.getFullYear();
+
+        // Check if we have enough data to calculate
+        function hasRequiredData() {
+            const balance = parseFloat(document.getElementById('currentBalance').value.replace(/[^0-9.]/g, '')) || 0;
+            const rate = parseFloat(document.getElementById('interestRate').value.replace(/[^0-9.]/g, '')) || 0;
+            const age = parseInt(document.getElementById('currentAge').value) || 0;
+            const payoffYear = parseInt(document.getElementById('payoffYear').value) || 0;
+
+            return balance > 0 && rate > 0 && age > 0 && payoffYear > 0;
+        }
+
+        // Update UI based on data availability
+        function updateUIState() {
+            const hasData = hasRequiredData();
+            const sections = document.querySelectorAll('.needs-data');
+            const gettingStarted = document.getElementById('gettingStarted');
+
+            sections.forEach(section => {
+                if (hasData) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+
+            if (hasData) {
+                gettingStarted.classList.add('hidden');
+            } else {
+                gettingStarted.classList.remove('hidden');
+            }
+        }
+
+        // Get input values
+        function getInputValues() {
+            const balanceStr = document.getElementById('currentBalance').value.replace(/[^0-9.]/g, '');
+            const rateStr = document.getElementById('interestRate').value.replace(/[^0-9.]/g, '');
+
+            const currentBalance = parseFloat(balanceStr) || 0;
+            const annualRate = parseFloat(rateStr) || 0;
+            const monthlyRate = annualRate / 100 / 12;
+            const currentAge = parseInt(document.getElementById('currentAge').value) || 0;
+            const maturityYear = parseInt(document.getElementById('payoffYear').value) || 0;
+            const maturityMonth = parseInt(document.getElementById('payoffMonth').value) || 1;
+            const currentYear = parseInt(document.getElementById('currentYear').value) || today.getFullYear();
+            const currentMonth = parseInt(document.getElementById('currentMonth').value) || (today.getMonth() + 1);
+            const propertyTax = parseFloat(document.getElementById('propertyTax').value.replace(/[^0-9.]/g, '')) || 0;
+            const insurance = parseFloat(document.getElementById('insurance').value.replace(/[^0-9.]/g, '')) || 0;
+            const escrow = propertyTax + insurance;
+
+            // Calculate months remaining
+            const monthsRemaining = (maturityYear - currentYear) * 12 + (maturityMonth - currentMonth);
+
+            // Calculate monthly payment using PMT formula
+            let currentPayment = 0;
+            if (monthsRemaining > 0 && currentBalance > 0) {
+                if (monthlyRate === 0) {
+                    currentPayment = currentBalance / monthsRemaining;
+                } else {
+                    currentPayment = currentBalance * (monthlyRate * Math.pow(1 + monthlyRate, monthsRemaining)) / (Math.pow(1 + monthlyRate, monthsRemaining) - 1);
+                }
+            }
+
+            return {
+                currentBalance,
+                annualRate,
+                monthlyRate,
+                currentPayment,
+                currentAge,
+                maturityYear,
+                maturityMonth,
+                currentYear,
+                currentMonth,
+                monthsRemaining,
+                propertyTax,
+                insurance,
+                escrow
+            };
+        }
+
+        // Calculate age at payoff and update slider
+        function updateAgeAtPayoff() {
+            const values = getInputValues();
+
+            if (!hasRequiredData()) {
+                document.getElementById('ageAtPayoff').textContent = '--';
+                return 0;
+            }
+
+            const yearsUntilPayoff = values.maturityYear - values.currentYear + (values.maturityMonth - values.currentMonth) / 12;
+            const ageAtPayoff = Math.round(values.currentAge + yearsUntilPayoff);
+
+            document.getElementById('ageAtPayoff').textContent = ageAtPayoff;
+
+            // Update slider range
+            const slider = document.getElementById('ageSlider');
+            const minAge = values.currentAge + 1;
+            const maxAge = ageAtPayoff;
+
+            slider.min = minAge;
+            slider.max = maxAge;
+
+            // Set slider to a reasonable default (midpoint or 10 years early)
+            const defaultTarget = Math.max(minAge, ageAtPayoff - 10);
+            if (parseInt(slider.value) > maxAge || parseInt(slider.value) < minAge) {
+                slider.value = defaultTarget;
+            }
+
+            // Update age markers
+            updateAgeMarkers(minAge, maxAge);
+
+            return ageAtPayoff;
+        }
+
+        // Update age markers on slider
+        function updateAgeMarkers(minAge, maxAge) {
+            const range = maxAge - minAge;
+            const markers = [];
+            const step = Math.max(1, Math.round(range / 5));
+
+            for (let age = minAge; age <= maxAge; age += step) {
+                markers.push(age);
+            }
+            if (markers[markers.length - 1] !== maxAge) {
+                markers.push(maxAge);
+            }
+
+            document.getElementById('ageMarkers').innerHTML = markers.map(m => `<span>${m}</span>`).join('');
+        }
+
+        // Calculate amortization schedule
+        function calculateAmortization(startBalance, monthlyPayment, monthlyRate) {
+            let balance = startBalance;
+
+            let totalInterest = 0;
+            let months = 0;
+            const yearlyData = [];
+            let yearInterest = 0;
+            let yearPrincipal = 0;
+            let yearStartBalance = balance;
+
+            const effectiveMonthlyPayment = monthlyPayment;
+
+            while (balance > 0.01 && months < 600) {
+                const interestPayment = balance * monthlyRate;
+                const principalPayment = Math.min(effectiveMonthlyPayment - interestPayment, balance);
+
+                if (principalPayment <= 0) {
+                    return { totalInterest: Infinity, months: Infinity, totalPaid: Infinity, yearlyData: [] };
+                }
+
+                totalInterest += interestPayment;
+                yearInterest += interestPayment;
+                yearPrincipal += principalPayment;
+                balance -= principalPayment;
+                months++;
+
+                if (months % 12 === 0 || balance <= 0.01) {
+                    yearlyData.push({
+                        year: Math.ceil(months / 12),
+                        startBalance: yearStartBalance,
+                        interestPaid: yearInterest,
+                        principalPaid: yearPrincipal,
+                        endBalance: Math.max(0, balance)
+                    });
+                    yearStartBalance = balance;
+                    yearInterest = 0;
+                    yearPrincipal = 0;
+                }
+            }
+
+            return {
+                totalInterest,
+                months,
+                totalPaid: totalInterest + startBalance,
+                yearlyData
+            };
+        }
+
+        // Calculate balance history for chart
+        function calculateBalanceHistory(startBalance, monthlyPayment, monthlyRate) {
+            let balance = startBalance;
+
+            const history = [{ year: 0, balance: balance }];
+            const effectiveMonthlyPayment = monthlyPayment;
+            let months = 0;
+
+            while (balance > 0.01 && months < 600) {
+                const interestPayment = balance * monthlyRate;
+                const principalPayment = Math.min(effectiveMonthlyPayment - interestPayment, balance);
+
+                if (principalPayment <= 0) break;
+
+                balance -= principalPayment;
+                months++;
+
+                if (months % 12 === 0) {
+                    history.push({ year: months / 12, balance: Math.max(0, balance) });
+                }
+            }
+
+            if (months % 12 !== 0) {
+                history.push({ year: Math.ceil(months / 12), balance: 0 });
+            }
+
+            return history;
+        }
+
+        // Calculate required payment for target payoff
+        function calculateRequiredPayment(values, targetAge) {
+            const yearsToPayoff = targetAge - values.currentAge;
+            const monthsToPayoff = yearsToPayoff * 12;
+
+            if (monthsToPayoff <= 0) return null;
+
+            const r = values.monthlyRate;
+            const n = monthsToPayoff;
+            const P = values.currentBalance;
+
+            if (P <= 0) return 0;
+
+            if (r === 0) {
+                return P / n;
+            }
+
+            return P * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+        }
+
+        // Format currency
+        function formatCurrency(amount) {
+            if (!isFinite(amount)) return 'N/A';
+            return '$' + amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        // Format input as currency while typing
+        function formatInputAsCurrency(input) {
+            let value = input.value.replace(/[^0-9.]/g, '');
+            const parts = value.split('.');
+            if (parts.length > 2) {
+                value = parts[0] + '.' + parts.slice(1).join('');
+            }
+            if (parts[0]) {
+                parts[0] = parseInt(parts[0]).toLocaleString('en-US');
+            }
+            input.value = parts.join('.');
+        }
+
+        // Store chart data globally for interactivity
+        let chartData = {
+            original: [],
+            accelerated: [],
+            maxBalance: 0,
+            maxYears: 0,
+            padding: { top: 20, right: 20, bottom: 40, left: 70 },
+            width: 0,
+            height: 300,
+            chartWidth: 0,
+            chartHeight: 0,
+            values: null
+        };
+
+        // Draw chart
+        function drawChart(originalHistory, acceleratedHistory, values) {
+            const canvas = document.getElementById('balanceChart');
+            const ctx = canvas.getContext('2d');
+
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width * window.devicePixelRatio;
+            canvas.height = 300 * window.devicePixelRatio;
+            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+
+            const width = rect.width;
+            const height = 300;
+            const padding = chartData.padding;
+            const chartWidth = width - padding.left - padding.right;
+            const chartHeight = height - padding.top - padding.bottom;
+
+            chartData.original = originalHistory;
+            chartData.accelerated = acceleratedHistory;
+            chartData.width = width;
+            chartData.chartWidth = chartWidth;
+            chartData.chartHeight = chartHeight;
+            chartData.values = values;
+
+            ctx.clearRect(0, 0, width, height);
+
+            const maxBalance = Math.max(
+                ...originalHistory.map(p => p.balance),
+                ...acceleratedHistory.map(p => p.balance)
+            );
+            const maxYears = Math.max(
+                originalHistory[originalHistory.length - 1]?.year || 0,
+                acceleratedHistory[acceleratedHistory.length - 1]?.year || 0
+            );
+
+            chartData.maxBalance = maxBalance;
+            chartData.maxYears = maxYears;
+
+            if (maxBalance === 0 || maxYears === 0) return;
+
+            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+            ctx.lineWidth = 1;
+
+            for (let i = 0; i <= 5; i++) {
+                const y = padding.top + (chartHeight * i / 5);
+                ctx.beginPath();
+                ctx.moveTo(padding.left, y);
+                ctx.lineTo(width - padding.right, y);
+                ctx.stroke();
+
+                ctx.fillStyle = '#888';
+                ctx.font = '11px system-ui';
+                ctx.textAlign = 'right';
+                const value = maxBalance * (1 - i / 5);
+                ctx.fillText('$' + Math.round(value / 1000) + 'k', padding.left - 10, y + 4);
+            }
+
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#888';
+            const yearStep = Math.max(1, Math.ceil(maxYears / 6));
+            for (let i = 0; i <= maxYears; i += yearStep) {
+                const x = padding.left + (chartWidth * i / maxYears);
+                ctx.fillText('Yr ' + i, x, height - 10);
+            }
+
+            ctx.beginPath();
+            ctx.strokeStyle = '#888';
+            ctx.lineWidth = 2;
+            originalHistory.forEach((point, i) => {
+                const x = padding.left + (chartWidth * point.year / maxYears);
+                const y = padding.top + chartHeight - (chartHeight * point.balance / maxBalance);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+
+            originalHistory.forEach((point) => {
+                const x = padding.left + (chartWidth * point.year / maxYears);
+                const y = padding.top + chartHeight - (chartHeight * point.balance / maxBalance);
+                ctx.beginPath();
+                ctx.arc(x, y, 4, 0, Math.PI * 2);
+                ctx.fillStyle = '#888';
+                ctx.fill();
+            });
+
+            ctx.beginPath();
+            ctx.strokeStyle = '#4fc3f7';
+            ctx.lineWidth = 3;
+            acceleratedHistory.forEach((point, i) => {
+                const x = padding.left + (chartWidth * point.year / maxYears);
+                const y = padding.top + chartHeight - (chartHeight * point.balance / maxBalance);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+
+            acceleratedHistory.forEach((point) => {
+                const x = padding.left + (chartWidth * point.year / maxYears);
+                const y = padding.top + chartHeight - (chartHeight * point.balance / maxBalance);
+                ctx.beginPath();
+                ctx.arc(x, y, 5, 0, Math.PI * 2);
+                ctx.fillStyle = '#4fc3f7';
+                ctx.fill();
+            });
+        }
+
+        // Handle chart hover
+        function handleChartHover(e) {
+            const canvas = document.getElementById('balanceChart');
+            const tooltip = document.getElementById('chartTooltip');
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const { padding, chartWidth, chartHeight, maxBalance, maxYears, original, accelerated, values } = chartData;
+
+            if (!maxYears || !values) return;
+
+            if (x < padding.left || x > padding.left + chartWidth || y < padding.top || y > padding.top + chartHeight) {
+                tooltip.style.display = 'none';
+                return;
+            }
+
+            const yearAtCursor = ((x - padding.left) / chartWidth) * maxYears;
+            const closestYear = Math.round(yearAtCursor);
+
+            const origPoint = original.find(p => p.year === closestYear);
+            const accelPoint = accelerated.find(p => p.year === closestYear);
+
+            if (!origPoint && !accelPoint) {
+                tooltip.style.display = 'none';
+                return;
+            }
+
+            let html = `<strong>Year ${closestYear}</strong> (Age ${values.currentAge + closestYear})<br>`;
+            if (origPoint) {
+                html += `<span style="color:#888">Original: ${formatCurrency(origPoint.balance)}</span><br>`;
+            }
+            if (accelPoint) {
+                html += `<span style="color:#4fc3f7">Accelerated: ${formatCurrency(accelPoint.balance)}</span>`;
+            } else if (closestYear > accelerated[accelerated.length - 1]?.year) {
+                html += `<span style="color:#4fc3f7">Accelerated: PAID OFF!</span>`;
+            }
+
+            tooltip.innerHTML = html;
+            tooltip.style.display = 'block';
+
+            let tooltipX = e.clientX + 15;
+            let tooltipY = e.clientY - 10;
+
+            const tooltipRect = tooltip.getBoundingClientRect();
+            if (tooltipX + tooltipRect.width > window.innerWidth) {
+                tooltipX = e.clientX - tooltipRect.width - 15;
+            }
+
+            tooltip.style.left = tooltipX + 'px';
+            tooltip.style.top = tooltipY + 'px';
+        }
+
+        function hideChartTooltip() {
+            document.getElementById('chartTooltip').style.display = 'none';
+        }
+
+        document.getElementById('balanceChart').addEventListener('mousemove', handleChartHover);
+        document.getElementById('balanceChart').addEventListener('mouseleave', hideChartTooltip);
+
+        // Update amortization table
+        function updateAmortizationTable(yearlyData, values) {
+            const tbody = document.getElementById('amortBody');
+            tbody.innerHTML = '';
+
+            const halfwayBalance = values.currentBalance / 2;
+            let halfwayMarked = false;
+
+            yearlyData.forEach((year) => {
+                const tr = document.createElement('tr');
+                const age = values.currentAge + year.year;
+
+                const isMilestone = (!halfwayMarked && year.endBalance <= halfwayBalance) || year.endBalance === 0;
+                if (year.endBalance <= halfwayBalance) halfwayMarked = true;
+
+                if (isMilestone) tr.classList.add('milestone');
+
+                tr.innerHTML = `
+                    <td>Year ${year.year}</td>
+                    <td>${age}</td>
+                    <td>${formatCurrency(year.startBalance)}</td>
+                    <td>${formatCurrency(year.interestPaid)}</td>
+                    <td>${formatCurrency(year.principalPaid)}</td>
+                    <td>${formatCurrency(year.endBalance)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function getMonthName(month) {
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            return months[month - 1];
+        }
+
+        // Update display
+        function updateCalculations() {
+            updateUIState();
+
+            if (!hasRequiredData()) {
+                document.getElementById('monthlyPayment').textContent = '--';
+                document.getElementById('monthlyPaymentHint').textContent = 'Principal & interest';
+                document.getElementById('targetAge').textContent = '--';
+                return;
+            }
+
+            const ageAtPayoff = updateAgeAtPayoff();
+            const values = getInputValues();
+            const targetAge = parseInt(document.getElementById('ageSlider').value);
+
+            if (values.escrow > 0) {
+                document.getElementById('monthlyPayment').textContent = formatCurrency(values.currentPayment + values.escrow);
+                document.getElementById('monthlyPaymentHint').textContent = `${formatCurrency(values.currentPayment)} P&I + ${formatCurrency(values.escrow)} escrow`;
+            } else {
+                document.getElementById('monthlyPayment').textContent = formatCurrency(values.currentPayment);
+                document.getElementById('monthlyPaymentHint').textContent = 'Principal & interest';
+            }
+            document.getElementById('targetAge').textContent = targetAge;
+            document.getElementById('extraPaymentSub').textContent = `on top of your ${formatCurrency(values.currentPayment)} P&I`;
+
+            const originalSchedule = calculateAmortization(values.currentBalance, values.currentPayment, values.monthlyRate);
+            const originalHistory = calculateBalanceHistory(values.currentBalance, values.currentPayment, values.monthlyRate);
+
+            const requiredPayment = calculateRequiredPayment(values, targetAge);
+
+            document.getElementById('origInterest').textContent = formatCurrency(originalSchedule.totalInterest);
+            document.getElementById('origTotal').textContent = formatCurrency(originalSchedule.totalPaid);
+            document.getElementById('origPaymentCell').textContent = formatCurrency(values.currentPayment + values.escrow);
+            document.getElementById('origAgeCell').textContent = ageAtPayoff;
+
+            if (requiredPayment === null || (requiredPayment > 0 && requiredPayment < values.currentPayment * 0.3)) {
+                document.getElementById('warningBox').style.display = 'block';
+                document.getElementById('warningBox').textContent = 'Target age is too aggressive. Please select a later payoff age.';
+                return;
+            }
+
+            document.getElementById('warningBox').style.display = 'none';
+
+            const extraPayment = Math.max(0, requiredPayment - values.currentPayment);
+
+            const newSchedule = calculateAmortization(values.currentBalance, requiredPayment, values.monthlyRate);
+            const acceleratedHistory = calculateBalanceHistory(values.currentBalance, requiredPayment, values.monthlyRate);
+
+            if (!newSchedule || newSchedule.totalInterest === Infinity) {
+                document.getElementById('warningBox').style.display = 'block';
+                document.getElementById('warningBox').textContent = 'Unable to calculate. Please adjust your target age or check your inputs.';
+                return;
+            }
+
+            const interestSaved = originalSchedule.totalInterest - newSchedule.totalInterest;
+            const yearsToPayoff = Math.ceil(newSchedule.months / 12);
+            const payoffYear = values.currentYear + yearsToPayoff;
+            const actualPayoffAge = values.currentAge + yearsToPayoff;
+
+            document.getElementById('extraPayment').textContent = formatCurrency(extraPayment);
+            document.getElementById('totalPayment').textContent = formatCurrency(requiredPayment);
+            document.getElementById('yearsToPayoff').textContent = yearsToPayoff;
+            document.getElementById('payoffDate').textContent = `Payoff: ${getMonthName(values.currentMonth)} ${payoffYear}`;
+            document.getElementById('interestSaved').textContent = formatCurrency(interestSaved);
+            document.getElementById('paymentFrequency').textContent = 'principal & interest only';
+
+            document.getElementById('newPayment').textContent = formatCurrency(requiredPayment + values.escrow);
+            document.getElementById('newAge').textContent = actualPayoffAge;
+            document.getElementById('newInterest').textContent = formatCurrency(newSchedule.totalInterest);
+            document.getElementById('newTotal').textContent = formatCurrency(newSchedule.totalPaid);
+
+            document.getElementById('totalSavings').textContent = formatCurrency(interestSaved);
+            const yearsSaved = ageAtPayoff - actualPayoffAge;
+
+            const savingsNote = `By paying an extra ${formatCurrency(extraPayment)}/month, you'll be mortgage-free ${yearsSaved} years earlier and save ${formatCurrency(interestSaved)} in interest!`;
+            document.getElementById('savingsNote').textContent = savingsNote;
+
+            drawChart(originalHistory, acceleratedHistory, values);
+            updateAmortizationTable(newSchedule.yearlyData, values);
+        }
+
+        // Event listeners
+        document.getElementById('ageSlider').addEventListener('input', updateCalculations);
+
+        ['currentBalance', 'interestRate', 'currentAge', 'payoffYear', 'payoffMonth', 'currentMonth', 'currentYear', 'propertyTax', 'insurance'].forEach(id => {
+            const el = document.getElementById(id);
+            el.addEventListener('input', () => {
+                if (id === 'currentBalance' || id === 'propertyTax' || id === 'insurance') {
+                    formatInputAsCurrency(el);
+                }
+                updateCalculations();
+            });
+            el.addEventListener('change', updateCalculations);
+        });
+
+        document.getElementById('amortToggle').addEventListener('click', () => {
+            const content = document.getElementById('amortContent');
+            const btn = document.getElementById('amortToggle');
+            content.classList.toggle('open');
+            btn.textContent = content.classList.contains('open') ? 'Hide Details' : 'Show Details';
+        });
+
+        // Share functionality
+        function getShareUrl() {
+            const params = new URLSearchParams();
+            params.set('balance', document.getElementById('currentBalance').value.replace(/[^0-9.]/g, ''));
+            params.set('rate', document.getElementById('interestRate').value);
+            params.set('age', document.getElementById('currentAge').value);
+            params.set('payoffMonth', document.getElementById('payoffMonth').value);
+            params.set('payoffYear', document.getElementById('payoffYear').value);
+            params.set('currentMonth', document.getElementById('currentMonth').value);
+            params.set('currentYear', document.getElementById('currentYear').value);
+            params.set('targetAge', document.getElementById('ageSlider').value);
+            params.set('tax', document.getElementById('propertyTax').value.replace(/[^0-9.]/g, ''));
+            params.set('insurance', document.getElementById('insurance').value.replace(/[^0-9.]/g, ''));
+            return window.location.origin + window.location.pathname + '?' + params.toString();
+        }
+
+        function loadFromUrl() {
+            const params = new URLSearchParams(window.location.search);
+            if (params.has('balance')) {
+                const val = parseFloat(params.get('balance'));
+                if (val > 0) document.getElementById('currentBalance').value = val.toLocaleString('en-US', {minimumFractionDigits: 2});
+            }
+            if (params.has('rate')) {
+                const val = params.get('rate');
+                if (val) document.getElementById('interestRate').value = val;
+            }
+            if (params.has('age')) {
+                const val = params.get('age');
+                if (val) document.getElementById('currentAge').value = val;
+            }
+            if (params.has('payoffMonth')) document.getElementById('payoffMonth').value = params.get('payoffMonth');
+            if (params.has('payoffYear')) {
+                const val = params.get('payoffYear');
+                if (val) document.getElementById('payoffYear').value = val;
+            }
+            if (params.has('currentMonth')) document.getElementById('currentMonth').value = params.get('currentMonth');
+            if (params.has('currentYear')) document.getElementById('currentYear').value = params.get('currentYear');
+            if (params.has('targetAge')) document.getElementById('ageSlider').value = params.get('targetAge');
+            if (params.has('tax')) {
+                const taxVal = parseFloat(params.get('tax'));
+                if (taxVal > 0) document.getElementById('propertyTax').value = taxVal.toLocaleString('en-US', {minimumFractionDigits: 0});
+            }
+            if (params.has('insurance')) {
+                const insVal = parseFloat(params.get('insurance'));
+                if (insVal > 0) document.getElementById('insurance').value = insVal.toLocaleString('en-US', {minimumFractionDigits: 0});
+            }
+        }
+
+        document.getElementById('shareBtn').addEventListener('click', () => {
+            const url = getShareUrl();
+            navigator.clipboard.writeText(url).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 2000);
+            }).catch(() => {
+                prompt('Copy this link:', url);
+            });
+        });
+
+        loadFromUrl();
+        updateCalculations();
+        window.addEventListener('resize', updateCalculations);
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isOpen = faqItem.classList.contains('open');
+
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('open');
+                });
+
+                // Toggle current item
+                if (!isOpen) {
+                    faqItem.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
