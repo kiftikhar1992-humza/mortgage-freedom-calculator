@@ -1,0 +1,12 @@
+name = "mortgage-freedom-calculator"
+compatibility_date = "2024-01-17"
+pages_build_output_dir = "./"
+
+# KV Namespace for caching FRED data
+[[kv_namespaces]]
+binding = "FRED_CACHE"
+id = "your-kv-namespace-id"  # Replace after running: npx wrangler kv:namespace create "FRED_CACHE"
+
+# Environment variables (secrets set via dashboard or wrangler)
+# npx wrangler pages secret put FRED_API_KEY
+# npx wrangler pages secret put ANTHROPIC_API_KEY

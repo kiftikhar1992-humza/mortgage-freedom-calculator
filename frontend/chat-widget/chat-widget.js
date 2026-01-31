@@ -7,8 +7,8 @@
 
   // Configuration
   const CONFIG = {
-    // API endpoint - update this after deployment
-    apiUrl: 'https://mortgage-mcp-server.YOUR_SUBDOMAIN.workers.dev/api/chat',
+    // API endpoint - uses relative URL so it works on any domain
+    apiUrl: '/api/chat',
     maxMessageLength: 2000,
     maxHistoryLength: 10,
   };
