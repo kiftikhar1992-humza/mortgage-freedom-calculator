@@ -16,8 +16,13 @@ interface ChatRequest {
   }>;
 }
 
-export const onRequestPost: PagesFunction<Env> = async (context) => {
+export const onRequest: PagesFunction<Env> = async (context) => {
   const { request, env } = context;
+
+  // Only allow POST
+  if (request.method !== 'POST') {
+    return new Response('Method not allowed', { status: 405 });
+  }
 
   try {
     const body: ChatRequest = await request.json();
