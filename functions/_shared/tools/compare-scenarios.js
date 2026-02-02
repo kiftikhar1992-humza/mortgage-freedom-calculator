@@ -3,7 +3,7 @@ export const compareRefinanceDefinition = {
   description:
     'Compare the current mortgage against a potential refinance scenario. Calculates break-even point, total savings, and whether refinancing makes financial sense.',
   input_schema: {
-    type: 'object' as const,
+    type: 'object',
     properties: {
       current_balance: {
         type: 'number',
@@ -40,16 +40,7 @@ export const compareRefinanceDefinition = {
   },
 };
 
-export interface CompareRefinanceInput {
-  current_balance: number;
-  current_rate: number;
-  current_remaining: number;
-  new_rate: number;
-  closing_costs: number;
-  new_term?: number;
-}
-
-function calculateMonthlyPayment(balance: number, annualRate: number, termMonths: number): number {
+function calculateMonthlyPayment(balance, annualRate, termMonths) {
   const monthlyRate = annualRate / 100 / 12;
   if (monthlyRate === 0) {
     return balance / termMonths;
@@ -60,7 +51,7 @@ function calculateMonthlyPayment(balance: number, annualRate: number, termMonths
   );
 }
 
-function calculateTotalInterest(balance: number, annualRate: number, termMonths: number): number {
+function calculateTotalInterest(balance, annualRate, termMonths) {
   const monthlyPayment = calculateMonthlyPayment(balance, annualRate, termMonths);
   const monthlyRate = annualRate / 100 / 12;
   let remaining = balance;
@@ -77,7 +68,11 @@ function calculateTotalInterest(balance: number, annualRate: number, termMonths:
   return totalInterest;
 }
 
-export function executeCompareRefinance(input: CompareRefinanceInput): string {
+function formatCurrency(amount) {
+  return `$${amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
+
+export function executeCompareRefinance(input) {
   const {
     current_balance,
     current_rate,
@@ -87,7 +82,6 @@ export function executeCompareRefinance(input: CompareRefinanceInput): string {
     new_term = 360,
   } = input;
 
-  // Current loan calculations
   const currentMonthlyPayment = calculateMonthlyPayment(
     current_balance,
     current_rate,
@@ -100,32 +94,25 @@ export function executeCompareRefinance(input: CompareRefinanceInput): string {
   );
   const currentTotalPaid = current_balance + currentTotalInterest;
 
-  // New loan calculations (including closing costs rolled in)
   const newBalance = current_balance + closing_costs;
   const newMonthlyPayment = calculateMonthlyPayment(newBalance, new_rate, new_term);
   const newTotalInterest = calculateTotalInterest(newBalance, new_rate, new_term);
   const newTotalPaid = newBalance + newTotalInterest;
 
-  // Monthly savings
   const monthlySavings = currentMonthlyPayment - newMonthlyPayment;
 
-  // Break-even calculation (months until closing costs are recovered through monthly savings)
-  let breakEvenMonths: number | string;
+  let breakEvenMonths;
   if (monthlySavings <= 0) {
     breakEvenMonths = 'Never (new payment is higher or equal)';
   } else {
     breakEvenMonths = Math.ceil(closing_costs / monthlySavings);
   }
 
-  // Long-term comparison (only comparing remaining term costs)
   const lifetimeSavings = currentTotalPaid - newTotalPaid;
-
-  // Rate difference
   const rateDiff = current_rate - new_rate;
 
-  // Recommendation logic
-  let recommendation: string;
-  let reasoning: string;
+  let recommendation;
+  let reasoning;
 
   if (rateDiff < 0) {
     recommendation = 'Not Recommended';
@@ -179,8 +166,4 @@ export function executeCompareRefinance(input: CompareRefinanceInput): string {
     recommendation,
     reasoning,
   });
-}
-
-function formatCurrency(amount: number): string {
-  return `$${amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }

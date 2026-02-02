@@ -1,31 +1,16 @@
-import { CacheService } from '../_shared/services/cache';
-import { FREDService } from '../_shared/services/fred';
-import { ClaudeService } from '../_shared/services/claude';
+import { CacheService } from '../_shared/services/cache.js';
+import { FREDService } from '../_shared/services/fred.js';
+import { ClaudeService } from '../_shared/services/claude.js';
 
-interface Env {
-  FRED_CACHE: KVNamespace;
-  FRED_API_KEY: string;
-  ANTHROPIC_API_KEY: string;
-}
-
-interface ChatRequest {
-  message: string;
-  conversationHistory?: Array<{
-    role: 'user' | 'assistant';
-    content: string;
-  }>;
-}
-
-export const onRequest: PagesFunction<Env> = async (context) => {
+export async function onRequest(context) {
   const { request, env } = context;
 
-  // Only allow POST
   if (request.method !== 'POST') {
     return new Response('Method not allowed', { status: 405 });
   }
 
   try {
-    const body: ChatRequest = await request.json();
+    const body = await request.json();
 
     if (!body.message || typeof body.message !== 'string') {
       return Response.json(
@@ -43,7 +28,6 @@ export const onRequest: PagesFunction<Env> = async (context) => {
 
     const history = (body.conversationHistory || []).slice(-10);
 
-    // Initialize services
     const cacheService = new CacheService(env.FRED_CACHE);
     const fredService = new FREDService(env.FRED_API_KEY, cacheService);
     const claudeService = new ClaudeService(env.ANTHROPIC_API_KEY, fredService);
@@ -66,4 +50,4 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       { status: 500 }
     );
   }
-};
+}

@@ -1,30 +1,24 @@
-import { FREDService } from '../services/fred';
 import {
   getCurrentRatesDefinition,
   executeGetCurrentRates,
-  GetCurrentRatesInput,
-} from './get-current-rates';
+} from './get-current-rates.js';
 import {
   getRateHistoryDefinition,
   executeGetRateHistory,
-  GetRateHistoryInput,
-} from './get-rate-history';
+} from './get-rate-history.js';
 import {
   getAffordabilityDefinition,
   executeGetAffordability,
-} from './get-affordability';
+} from './get-affordability.js';
 import {
   calculatePayoffDefinition,
   executeCalculatePayoff,
-  CalculatePayoffInput,
-} from './calculate-savings';
+} from './calculate-savings.js';
 import {
   compareRefinanceDefinition,
   executeCompareRefinance,
-  CompareRefinanceInput,
-} from './compare-scenarios';
+} from './compare-scenarios.js';
 
-// Export all tool definitions for Claude
 export const toolDefinitions = [
   getCurrentRatesDefinition,
   getRateHistoryDefinition,
@@ -33,27 +27,22 @@ export const toolDefinitions = [
   compareRefinanceDefinition,
 ];
 
-// Tool executor
-export async function executeTool(
-  toolName: string,
-  input: unknown,
-  fredService: FREDService
-): Promise<string> {
+export async function executeTool(toolName, input, fredService) {
   switch (toolName) {
     case 'get_current_rates':
-      return executeGetCurrentRates(input as GetCurrentRatesInput, fredService);
+      return executeGetCurrentRates(input, fredService);
 
     case 'get_rate_history':
-      return executeGetRateHistory(input as GetRateHistoryInput, fredService);
+      return executeGetRateHistory(input, fredService);
 
     case 'get_affordability_index':
       return executeGetAffordability(fredService);
 
     case 'calculate_payoff':
-      return executeCalculatePayoff(input as CalculatePayoffInput);
+      return executeCalculatePayoff(input);
 
     case 'compare_refinance':
-      return executeCompareRefinance(input as CompareRefinanceInput);
+      return executeCompareRefinance(input);
 
     default:
       throw new Error(`Unknown tool: ${toolName}`);

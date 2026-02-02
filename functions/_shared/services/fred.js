@@ -1,40 +1,13 @@
-import { CacheService, CACHE_TTL } from './cache';
-
-export interface FREDObservation {
-  date: string;
-  value: string;
-}
-
-export interface FREDSeriesResponse {
-  observations: FREDObservation[];
-}
-
-export type MortgageRateSeries = 'MORTGAGE30US' | 'MORTGAGE15US';
-
-export interface CurrentRates {
-  rate30Year: number;
-  rate15Year: number;
-  date: string;
-}
-
-export interface RateHistoryPoint {
-  date: string;
-  value: number;
-}
+import { CacheService, CACHE_TTL } from './cache.js';
 
 export class FREDService {
-  private readonly baseUrl = 'https://api.stlouisfed.org/fred';
+  constructor(apiKey, cache) {
+    this.apiKey = apiKey;
+    this.cache = cache;
+    this.baseUrl = 'https://api.stlouisfed.org/fred';
+  }
 
-  constructor(
-    private apiKey: string,
-    private cache: CacheService
-  ) {}
-
-  private async fetchSeries(
-    seriesId: string,
-    startDate?: string,
-    endDate?: string
-  ): Promise<FREDObservation[]> {
+  async fetchSeries(seriesId, startDate, endDate) {
     const params = new URLSearchParams({
       series_id: seriesId,
       api_key: this.apiKey,
@@ -58,11 +31,11 @@ export class FREDService {
       throw new Error(`FRED API error: ${response.status} ${response.statusText}`);
     }
 
-    const data: FREDSeriesResponse = await response.json();
+    const data = await response.json();
     return data.observations;
   }
 
-  async getCurrentRate(series: MortgageRateSeries): Promise<number> {
+  async getCurrentRate(series) {
     const cacheKey = `rate:${series}`;
 
     return this.cache.getOrFetch(
@@ -81,7 +54,7 @@ export class FREDService {
     );
   }
 
-  async getCurrentRates(): Promise<CurrentRates> {
+  async getCurrentRates() {
     const cacheKey = 'rates:current';
 
     return this.cache.getOrFetch(
@@ -109,11 +82,7 @@ export class FREDService {
     );
   }
 
-  async getRateHistory(
-    series: MortgageRateSeries,
-    startDate: string,
-    endDate?: string
-  ): Promise<RateHistoryPoint[]> {
+  async getRateHistory(series, startDate, endDate) {
     const cacheKey = `history:${series}:${startDate}:${endDate || 'now'}`;
 
     return this.cache.getOrFetch(
@@ -127,13 +96,13 @@ export class FREDService {
             date: obs.date,
             value: parseFloat(obs.value),
           }))
-          .reverse(); // Oldest first
+          .reverse();
       },
       { ttl: CACHE_TTL.MORTGAGE_RATES }
     );
   }
 
-  async getAffordabilityIndex(): Promise<{ value: number; date: string }> {
+  async getAffordabilityIndex() {
     const cacheKey = 'affordability:current';
 
     return this.cache.getOrFetch(
@@ -155,7 +124,7 @@ export class FREDService {
     );
   }
 
-  async getHomePriceIndex(months: number = 12): Promise<RateHistoryPoint[]> {
+  async getHomePriceIndex(months = 12) {
     const cacheKey = `homeprice:${months}`;
 
     return this.cache.getOrFetch(
@@ -183,11 +152,7 @@ export class FREDService {
     );
   }
 
-  async getSeriesObservations(
-    series: string,
-    startDate: string,
-    endDate?: string
-  ): Promise<RateHistoryPoint[]> {
+  async getSeriesObservations(series, startDate, endDate) {
     const observations = await this.fetchSeries(series, startDate, endDate);
 
     return observations

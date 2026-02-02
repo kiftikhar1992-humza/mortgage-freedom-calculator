@@ -6,14 +6,13 @@
     "lib": ["ES2022"],
     "types": ["@cloudflare/workers-types"],
     "strict": true,
-    "noEmit": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "declaration": false,
+    "outDir": "."
   },
   "include": ["./**/*.ts"],
   "exclude": ["node_modules"]

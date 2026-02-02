@@ -3,7 +3,7 @@ export const calculatePayoffDefinition = {
   description:
     'Calculate mortgage payoff details including monthly payment, total interest, and time to payoff. Use this to show users how their current mortgage will amortize or to calculate the impact of extra payments.',
   input_schema: {
-    type: 'object' as const,
+    type: 'object',
     properties: {
       balance: {
         type: 'number',
@@ -26,30 +26,10 @@ export const calculatePayoffDefinition = {
   },
 };
 
-export interface CalculatePayoffInput {
-  balance: number;
-  rate: number;
-  term: number;
-  extra_payment?: number;
-}
-
-interface AmortizationResult {
-  monthlyPayment: number;
-  totalInterest: number;
-  totalPaid: number;
-  monthsToPayoff: number;
-}
-
-function calculateAmortization(
-  balance: number,
-  annualRate: number,
-  termMonths: number,
-  extraPayment: number = 0
-): AmortizationResult {
+function calculateAmortization(balance, annualRate, termMonths, extraPayment = 0) {
   const monthlyRate = annualRate / 100 / 12;
 
-  // Calculate base monthly payment
-  let monthlyPayment: number;
+  let monthlyPayment;
   if (monthlyRate === 0) {
     monthlyPayment = balance / termMonths;
   } else {
@@ -69,7 +49,6 @@ function calculateAmortization(
     const principalPayment = Math.min(totalPayment - interestPayment, remainingBalance);
 
     if (principalPayment <= 0) {
-      // Payment doesn't cover interest - infinite loop prevention
       return {
         monthlyPayment,
         totalInterest: Infinity,
@@ -91,13 +70,10 @@ function calculateAmortization(
   };
 }
 
-export function executeCalculatePayoff(input: CalculatePayoffInput): string {
+export function executeCalculatePayoff(input) {
   const { balance, rate, term, extra_payment = 0 } = input;
 
-  // Calculate original schedule
   const original = calculateAmortization(balance, rate, term);
-
-  // Calculate with extra payment
   const accelerated = calculateAmortization(balance, rate, term, extra_payment);
 
   const monthsSaved = original.monthsToPayoff - accelerated.monthsToPayoff;
@@ -105,7 +81,7 @@ export function executeCalculatePayoff(input: CalculatePayoffInput): string {
   const remainingMonthsSaved = monthsSaved % 12;
   const interestSaved = original.totalInterest - accelerated.totalInterest;
 
-  const result: Record<string, unknown> = {
+  const result = {
     original_schedule: {
       monthly_payment: `$${original.monthlyPayment.toFixed(2)}`,
       total_interest: `$${original.totalInterest.toFixed(2)}`,

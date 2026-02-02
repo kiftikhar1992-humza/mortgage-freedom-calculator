@@ -1,13 +1,12 @@
-import { CacheService } from '../_shared/services/cache';
-import { FREDService } from '../_shared/services/fred';
+import { CacheService } from '../_shared/services/cache.js';
+import { FREDService } from '../_shared/services/fred.js';
 
-interface Env {
-  FRED_CACHE: KVNamespace;
-  FRED_API_KEY: string;
-}
+export async function onRequest(context) {
+  const { request, env } = context;
 
-export const onRequestGet: PagesFunction<Env> = async (context) => {
-  const { env } = context;
+  if (request.method !== 'GET') {
+    return new Response('Method not allowed', { status: 405 });
+  }
 
   try {
     const cacheService = new CacheService(env.FRED_CACHE);
@@ -15,7 +14,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
     const data = await fredService.getAffordabilityIndex();
 
-    let interpretation: string;
+    let interpretation;
     if (data.value >= 120) {
       interpretation = 'Very Affordable';
     } else if (data.value >= 100) {
@@ -41,4 +40,4 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
       { status: 500 }
     );
   }
-};
+}

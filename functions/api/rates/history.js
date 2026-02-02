@@ -1,17 +1,16 @@
-import { CacheService } from '../../_shared/services/cache';
-import { FREDService, MortgageRateSeries } from '../../_shared/services/fred';
+import { CacheService } from '../../_shared/services/cache.js';
+import { FREDService } from '../../_shared/services/fred.js';
 
-interface Env {
-  FRED_CACHE: KVNamespace;
-  FRED_API_KEY: string;
-}
-
-export const onRequestGet: PagesFunction<Env> = async (context) => {
+export async function onRequest(context) {
   const { request, env } = context;
+
+  if (request.method !== 'GET') {
+    return new Response('Method not allowed', { status: 405 });
+  }
 
   try {
     const url = new URL(request.url);
-    const series = url.searchParams.get('series') as MortgageRateSeries | null;
+    const series = url.searchParams.get('series');
     const startDate = url.searchParams.get('start');
     const endDate = url.searchParams.get('end') || undefined;
 
@@ -47,4 +46,4 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
       { status: 500 }
     );
   }
-};
+}

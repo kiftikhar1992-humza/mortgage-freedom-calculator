@@ -1,11 +1,9 @@
-import { FREDService, MortgageRateSeries } from '../services/fred';
-
 export const getRateHistoryDefinition = {
   name: 'get_rate_history',
   description:
     'Fetch historical mortgage rate data for a specific time period. Use this to show rate trends, compare current rates to historical averages, or analyze rate changes over time.',
   input_schema: {
-    type: 'object' as const,
+    type: 'object',
     properties: {
       series: {
         type: 'string',
@@ -27,16 +25,7 @@ export const getRateHistoryDefinition = {
   },
 };
 
-export interface GetRateHistoryInput {
-  series: MortgageRateSeries;
-  start_date: string;
-  end_date?: string;
-}
-
-export async function executeGetRateHistory(
-  input: GetRateHistoryInput,
-  fredService: FREDService
-): Promise<string> {
+export async function executeGetRateHistory(input, fredService) {
   const history = await fredService.getRateHistory(
     input.series,
     input.start_date,
@@ -75,6 +64,6 @@ export async function executeGetRateHistory(
       average: `${avg.toFixed(2)}%`,
     },
     data_points: history.length,
-    data: history.slice(-10), // Last 10 data points for context
+    data: history.slice(-10),
   });
 }

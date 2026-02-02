@@ -1,23 +1,19 @@
-import { FREDService } from '../services/fred';
-
 export const getAffordabilityDefinition = {
   name: 'get_affordability_index',
   description:
     'Get the current Housing Affordability Index, which measures whether a typical family earns enough income to qualify for a mortgage on a typical home. An index above 100 means housing is more affordable.',
   input_schema: {
-    type: 'object' as const,
+    type: 'object',
     properties: {},
     required: [],
   },
 };
 
-export async function executeGetAffordability(
-  fredService: FREDService
-): Promise<string> {
+export async function executeGetAffordability(fredService) {
   const data = await fredService.getAffordabilityIndex();
 
-  let interpretation: string;
-  let explanation: string;
+  let interpretation;
+  let explanation;
 
   if (data.value >= 140) {
     interpretation = 'Very Affordable';

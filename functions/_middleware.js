@@ -6,7 +6,7 @@ const corsHeaders = {
   'Access-Control-Max-Age': '86400',
 };
 
-export const onRequest: PagesFunction = async (context) => {
+export async function onRequest(context) {
   // Handle CORS preflight
   if (context.request.method === 'OPTIONS') {
     return new Response(null, {
@@ -25,4 +25,4 @@ export const onRequest: PagesFunction = async (context) => {
   });
 
   return newResponse;
-};
+}

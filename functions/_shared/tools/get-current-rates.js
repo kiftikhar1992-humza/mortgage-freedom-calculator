@@ -1,11 +1,9 @@
-import { FREDService } from '../services/fred';
-
 export const getCurrentRatesDefinition = {
   name: 'get_current_rates',
   description:
     'Fetch the latest 30-year and 15-year fixed mortgage rates from the Federal Reserve. Use this when users ask about current mortgage rates or want to compare rate options.',
   input_schema: {
-    type: 'object' as const,
+    type: 'object',
     properties: {
       rate_type: {
         type: 'string',
@@ -18,14 +16,7 @@ export const getCurrentRatesDefinition = {
   },
 };
 
-export interface GetCurrentRatesInput {
-  rate_type?: '30yr' | '15yr' | 'all';
-}
-
-export async function executeGetCurrentRates(
-  input: GetCurrentRatesInput,
-  fredService: FREDService
-): Promise<string> {
+export async function executeGetCurrentRates(input, fredService) {
   const rateType = input.rate_type || 'all';
 
   if (rateType === '30yr') {
