@@ -5,7 +5,7 @@ pages_build_output_dir = "./"
 # KV Namespace for caching FRED data
 [[kv_namespaces]]
 binding = "FRED_CACHE"
-id = "your-kv-namespace-id"  # Replace after running: npx wrangler kv:namespace create "FRED_CACHE"
+id = "1a2c4e28fa434f7c986073921174423a"
 
 # Environment variables (secrets set via dashboard or wrangler)
 # npx wrangler pages secret put FRED_API_KEY

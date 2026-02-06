@@ -1,0 +1,10 @@
+# Robots.txt for mortgagefreedomcalculator.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mortgagefreedomcalculator.com/sitemap.xml
+
+# Crawl-delay (optional, be nice to the server)
+Crawl-delay: 1

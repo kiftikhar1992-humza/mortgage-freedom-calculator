@@ -9,6 +9,14 @@ export async function onRequest(context) {
   }
 
   try {
+    // Debug: Check if env vars exist
+    if (!env.FRED_API_KEY) {
+      return Response.json({ error: 'FRED_API_KEY not set', debug: true }, { status: 500 });
+    }
+    if (!env.FRED_CACHE) {
+      return Response.json({ error: 'FRED_CACHE not bound', debug: true }, { status: 500 });
+    }
+
     const url = new URL(request.url);
     const rateType = url.searchParams.get('type');
 
@@ -45,7 +53,7 @@ export async function onRequest(context) {
   } catch (error) {
     console.error('Error fetching rates:', error);
     return Response.json(
-      { error: 'Failed to fetch mortgage rates' },
+      { error: 'Failed to fetch mortgage rates', message: error.message },
       { status: 500 }
     );
   }
