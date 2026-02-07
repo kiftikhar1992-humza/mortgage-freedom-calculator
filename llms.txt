@@ -1,0 +1,50 @@
+# Mortgage Freedom Calculator
+> Free mortgage payoff calculator helping homeowners become mortgage-free sooner.
+
+## About
+Mortgage Freedom Calculator is a free, no-signup-required web tool that shows homeowners how extra payments, lump sums, and bi-weekly payments can help them pay off their mortgage years earlier and save thousands in interest. Unlike generic amortization calculators, it focuses on age-based payoff planning — helping users visualize what age they'll be mortgage-free.
+
+## Key Features
+- Extra monthly payment calculator
+- Lump sum payment analysis
+- Bi-weekly payment option
+- Visual balance-over-time chart
+- Year-by-year amortization schedule
+- Live mortgage rates from the Federal Reserve (FRED)
+- Interest savings calculator
+- Shareable scenarios via URL
+
+## Pages
+
+### Calculator (Homepage)
+- URL: https://mortgagefreedomcalculator.com/
+- Description: The main mortgage payoff calculator with real-time rate data, amortization schedule, and visual charts.
+
+### Blog
+- URL: https://mortgagefreedomcalculator.com/blog/
+- Description: Articles about mortgage payoff strategies, housing affordability, and financial planning.
+
+### Is the Starter Home Dream Dead?
+- URL: https://mortgagefreedomcalculator.com/blog/starter-home-dream-dead/
+- Description: Analysis of how the median first-time homebuyer age has reached 40 and what it means for the American Dream.
+
+### How Do Extra Mortgage Payments Work?
+- URL: https://mortgagefreedomcalculator.com/blog/how-extra-payments-work/
+- Description: Explains the math behind how extra mortgage payments reduce principal and save interest over the life of a loan.
+
+### What Age Should You Pay Off Your Mortgage?
+- URL: https://mortgagefreedomcalculator.com/blog/what-age-pay-off-mortgage/
+- Description: Guide to choosing the right target payoff age based on retirement planning, interest rates, and financial goals.
+
+### How Much Can You Save Paying Off Early?
+- URL: https://mortgagefreedomcalculator.com/blog/how-much-save-paying-early/
+- Description: Real examples showing potential interest savings from paying off a mortgage 5, 10, or 15 years early.
+
+## Data Sources
+- Mortgage rate data: Federal Reserve Economic Data (FRED) — updated weekly
+- 30-Year Fixed Rate: FRED Series MORTGAGE30US
+- 15-Year Fixed Rate: FRED Series MORTGAGE15US
+
+## Contact
+- Website: https://mortgagefreedomcalculator.com
+- Email: contact@mortgagefreedomcalculator.com

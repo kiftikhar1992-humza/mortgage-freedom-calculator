@@ -3,8 +3,21 @@
 User-agent: *
 Allow: /
 
+# Welcome AI search crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 # Sitemap location
 Sitemap: https://mortgagefreedomcalculator.com/sitemap.xml
 
-# Crawl-delay (optional, be nice to the server)
-Crawl-delay: 1
+# LLMs.txt for AI search engines
+# https://mortgagefreedomcalculator.com/llms.txt

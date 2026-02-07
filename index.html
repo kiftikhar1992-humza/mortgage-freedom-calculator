@@ -184,6 +184,9 @@
                 <span class="rate-value" id="rate15yr">--</span>
             </div>
             <span class="rates-updated" id="ratesUpdated">Loading rates...</span>
+            <div class="rates-disclaimer">
+                National avg. via <a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener">FRED</a> &mdash; not a loan offer. Your rate may vary.
+            </div>
         </div>
 
         <!-- Calculator Section -->
@@ -1268,14 +1271,11 @@
                 if (response.ok) {
                     const data = await response.json();
                     if (data.rates) {
-                        const rate30 = data.rates.find(r => r.type === '30yr');
-                        const rate15 = data.rates.find(r => r.type === '15yr');
-
-                        if (rate30) {
-                            document.getElementById('rate30yr').textContent = rate30.rate.toFixed(2) + '%';
+                        if (data.rates['30yr']) {
+                            document.getElementById('rate30yr').textContent = parseFloat(data.rates['30yr']).toFixed(2) + '%';
                         }
-                        if (rate15) {
-                            document.getElementById('rate15yr').textContent = rate15.rate.toFixed(2) + '%';
+                        if (data.rates['15yr']) {
+                            document.getElementById('rate15yr').textContent = parseFloat(data.rates['15yr']).toFixed(2) + '%';
                         }
 
                         document.getElementById('ratesUpdated').textContent = 'Updated: Today';
@@ -1292,21 +1292,53 @@
         // Fetch rates on page load
         fetchRates();
 
-        // Email form handler (placeholder - no backend yet)
+        // Email subscription handler
         const emailForm = document.getElementById('emailForm');
         if (emailForm) {
-            emailForm.addEventListener('submit', (e) => {
+            emailForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                const email = emailForm.querySelector('input[type="email"]').value;
-                // For now, just show a toast message
-                const toast = document.getElementById('toast');
-                toast.textContent = 'Thanks! We\'ll be in touch soon.';
-                toast.classList.add('show');
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                    toast.textContent = 'Link copied to clipboard!';
-                }, 3000);
-                emailForm.reset();
+                const emailInput = emailForm.querySelector('input[type="email"]');
+                const submitBtn = emailForm.querySelector('.email-submit');
+                const email = emailInput.value;
+
+                // Disable form while submitting
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Subscribing...';
+
+                try {
+                    const response = await fetch('/api/subscribe', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email }),
+                    });
+
+                    const data = await response.json();
+                    const toast = document.getElementById('toast');
+
+                    if (response.ok) {
+                        toast.textContent = 'You\'re subscribed! Check your email to confirm.';
+                        emailForm.reset();
+                    } else {
+                        toast.textContent = data.error || 'Something went wrong. Please try again.';
+                    }
+
+                    toast.classList.add('show');
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        toast.textContent = 'Link copied to clipboard!';
+                    }, 4000);
+                } catch (error) {
+                    const toast = document.getElementById('toast');
+                    toast.textContent = 'Network error. Please try again.';
+                    toast.classList.add('show');
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        toast.textContent = 'Link copied to clipboard!';
+                    }, 4000);
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Subscribe';
+                }
             });
         }
     </script>
