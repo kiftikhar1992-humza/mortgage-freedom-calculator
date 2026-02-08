@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mortgage Freedom Calculator Blog</title>
+    <link>https://mortgagefreedomcalculator.com/blog/</link>
+    <description>Tips and strategies to pay off your mortgage faster, save thousands in interest, and achieve financial freedom.</description>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 07 Feb 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://mortgagefreedomcalculator.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://mortgagefreedomcalculator.com/og-image.png</url>
+      <title>Mortgage Freedom Calculator Blog</title>
+      <link>https://mortgagefreedomcalculator.com/blog/</link>
+    </image>
+
+    <item>
+      <title>Bi-Weekly vs. Lump Sum: What's the Best Way to Make Extra Mortgage Payments?</title>
+      <link>https://mortgagefreedomcalculator.com/blog/biweekly-vs-lump-sum-extra-payment/</link>
+      <guid isPermaLink="true">https://mortgagefreedomcalculator.com/blog/biweekly-vs-lump-sum-extra-payment/</guid>
+      <pubDate>Fri, 07 Feb 2026 00:00:00 GMT</pubDate>
+      <description>Should you sign up for bi-weekly payments, make a lump sum at the start of the year, or add extra each month? We compare all three strategies with real numbers and explain how mortgage interest calculation makes timing matter.</description>
+      <category>Mortgage Strategy</category>
+    </item>
+
+    <item>
+      <title>Is the Starter Home Dream Dead?</title>
+      <link>https://mortgagefreedomcalculator.com/blog/starter-home-dream-dead/</link>
+      <guid isPermaLink="true">https://mortgagefreedomcalculator.com/blog/starter-home-dream-dead/</guid>
+      <pubDate>Fri, 06 Feb 2026 00:00:00 GMT</pubDate>
+      <description>The median age of first-time homebuyers has reached 40 — an all-time high. What happened to the starter home, and what does this mean for the American Dream? A personal reflection on how homeownership has changed.</description>
+      <category>Housing Market</category>
+    </item>
+
+    <item>
+      <title>How Do Extra Mortgage Payments Work?</title>
+      <link>https://mortgagefreedomcalculator.com/blog/how-extra-payments-work/</link>
+      <guid isPermaLink="true">https://mortgagefreedomcalculator.com/blog/how-extra-payments-work/</guid>
+      <pubDate>Wed, 15 Jan 2026 00:00:00 GMT</pubDate>
+      <description>Discover how making extra payments on your mortgage can save you tens of thousands of dollars in interest and help you become debt-free years earlier. Learn the math behind why even small extra payments make a big difference.</description>
+      <category>Mortgage Tips</category>
+    </item>
+
+    <item>
+      <title>What Age Should You Pay Off Your Mortgage?</title>
+      <link>https://mortgagefreedomcalculator.com/blog/what-age-pay-off-mortgage/</link>
+      <guid isPermaLink="true">https://mortgagefreedomcalculator.com/blog/what-age-pay-off-mortgage/</guid>
+      <pubDate>Wed, 15 Jan 2026 00:00:00 GMT</pubDate>
+      <description>Is there an ideal age to be mortgage-free? We explore the factors to consider when setting your payoff goal, from retirement planning to opportunity costs, and help you find the right target for your situation.</description>
+      <category>Mortgage Planning</category>
+    </item>
+
+    <item>
+      <title>How Much Can You Save Paying Off Your Mortgage Early?</title>
+      <link>https://mortgagefreedomcalculator.com/blog/how-much-save-paying-early/</link>
+      <guid isPermaLink="true">https://mortgagefreedomcalculator.com/blog/how-much-save-paying-early/</guid>
+      <pubDate>Wed, 15 Jan 2026 00:00:00 GMT</pubDate>
+      <description>The numbers might surprise you. See real examples of how much homeowners can save by paying off their mortgage ahead of schedule, and learn which strategies provide the biggest bang for your buck.</description>
+      <category>Mortgage Savings</category>
+    </item>
+  </channel>
+</rss>

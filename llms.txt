@@ -5,6 +5,7 @@
 Mortgage Freedom Calculator is a free, no-signup-required web tool that shows homeowners how extra payments, lump sums, and bi-weekly payments can help them pay off their mortgage years earlier and save thousands in interest. Unlike generic amortization calculators, it focuses on age-based payoff planning — helping users visualize what age they'll be mortgage-free.
 
 ## Key Features
+- Home affordability calculator (how much house can I afford)
 - Extra monthly payment calculator
 - Lump sum payment analysis
 - Bi-weekly payment option
@@ -19,6 +20,10 @@ Mortgage Freedom Calculator is a free, no-signup-required web tool that shows ho
 ### Calculator (Homepage)
 - URL: https://mortgagefreedomcalculator.com/
 - Description: The main mortgage payoff calculator with real-time rate data, amortization schedule, and visual charts.
+
+### Affordability Calculator
+- URL: https://mortgagefreedomcalculator.com/affordability/
+- Description: Home affordability calculator that shows how much house you can afford based on income, debts, down payment, and current mortgage rates. Includes DTI ratio analysis, monthly payment breakdown, PMI estimation, and an interactive price explorer.
 
 ### Blog
 - URL: https://mortgagefreedomcalculator.com/blog/
