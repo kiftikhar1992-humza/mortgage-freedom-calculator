@@ -5,6 +5,7 @@
 Mortgage Freedom Calculator is a free, no-signup-required web tool that shows homeowners how extra payments, lump sums, and bi-weekly payments can help them pay off their mortgage years earlier and save thousands in interest. Unlike generic amortization calculators, it focuses on age-based payoff planning — helping users visualize what age they'll be mortgage-free.
 
 ## Key Features
+- Rent vs buy comparison calculator (should I rent or buy?)
 - Home affordability calculator (how much house can I afford)
 - Extra monthly payment calculator
 - Lump sum payment analysis
@@ -24,6 +25,10 @@ Mortgage Freedom Calculator is a free, no-signup-required web tool that shows ho
 ### Affordability Calculator
 - URL: https://mortgagefreedomcalculator.com/affordability/
 - Description: Home affordability calculator that shows how much house you can afford based on income, debts, down payment, and current mortgage rates. Includes DTI ratio analysis, monthly payment breakdown, PMI estimation, and an interactive price explorer.
+
+### Rent vs Buy Calculator
+- URL: https://mortgagefreedomcalculator.com/rent-vs-buy/
+- Description: Compare the true cost of renting vs buying a home over time. Enter your current rent and a potential home purchase scenario to see a side-by-side cost comparison, break-even year, equity built, and an interactive cost-over-time chart. Accounts for rent increases, home appreciation, property taxes, insurance, maintenance, HOA fees, PMI, and the opportunity cost of your down payment.
 
 ### Blog
 - URL: https://mortgagefreedomcalculator.com/blog/

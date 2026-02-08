@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent vs Buy Calculator - Should I Rent or Buy? | Mortgage Freedom Calculator</title>
+    <meta name="description" content="Free rent vs buy calculator. Compare the true cost of renting vs buying a home over time. See your break-even year, equity built, and which option saves you more money.">
+    <meta name="keywords" content="rent vs buy calculator, should I rent or buy, renting vs buying a home, rent or buy comparison, home buying calculator, break even rent vs buy">
+    <meta name="author" content="Mortgage Freedom Calculator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mortgagefreedomcalculator.com/rent-vs-buy/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rent vs Buy Calculator - Should I Rent or Buy?">
+    <meta property="og:description" content="Free calculator to compare the true cost of renting vs buying a home. See your break-even year and which option saves you more.">
+    <meta property="og:url" content="https://mortgagefreedomcalculator.com/rent-vs-buy/">
+    <meta property="og:image" content="https://mortgagefreedomcalculator.com/og-image.png">
+    <meta property="og:site_name" content="Mortgage Freedom Calculator">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rent vs Buy Calculator - Should I Rent or Buy?">
+    <meta name="twitter:description" content="Free calculator to compare the true cost of renting vs buying a home. See your break-even year and which option saves you more.">
+    <meta name="twitter:image" content="https://mortgagefreedomcalculator.com/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/og-image.png">
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Mortgage Freedom Calculator Blog" href="/blog/feed.xml">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- Structured Data - WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Rent vs Buy Calculator",
+        "description": "Compare the true cost of renting vs buying a home. See your break-even year, equity built, and total cost over time.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "url": "https://mortgagefreedomcalculator.com/rent-vs-buy/",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Rent vs buy cost comparison",
+            "Break-even year calculation",
+            "Home equity tracker",
+            "Cost over time chart",
+            "Year-by-year comparison table",
+            "Live mortgage rates"
+        ]
+    }
+    </script>
+
+    <!-- Structured Data - FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is it cheaper to rent or buy a home?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on your local market, how long you plan to stay, and current interest rates. Buying typically becomes cheaper than renting after 4-7 years due to equity buildup and home appreciation. Use our calculator to find your specific break-even point."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the break-even point for buying vs renting?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The break-even point is the year when the total cost of buying drops below the total cost of renting. This accounts for mortgage payments, taxes, insurance, maintenance, and the opportunity cost of your down payment, minus the equity you build through principal payments and home appreciation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What costs are included in buying a home?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Monthly buying costs include mortgage principal and interest, property taxes, homeowner's insurance, maintenance (typically 1% of home value per year), HOA fees, and PMI if your down payment is less than 20%. You should also consider the opportunity cost of tying up your down payment in the home instead of investing it."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How does home appreciation affect the rent vs buy decision?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Home appreciation builds equity on top of your principal payments. Historically, U.S. home prices have appreciated about 3-4% per year on average. Higher appreciation makes buying more attractive, while stagnant or declining home prices favor renting."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I buy a home if I might move in a few years?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If you plan to move within 3-5 years, renting is often the better financial choice. Buying involves significant upfront costs (closing costs, moving expenses) and most of your early mortgage payments go to interest rather than equity. The longer you stay, the more buying makes sense."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="has-header">
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/" class="site-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Mortgage <span>Freedom</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="/">Mortgage Payoff</a></li>
+                    <li><a href="/affordability/">Affordability</a></li>
+                    <li><a href="/rent-vs-buy/" class="active">Rent vs Buy</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero-title">Should You <span>Rent or Buy</span>?</h1>
+            <p class="hero-subtitle">Compare the true cost of renting vs buying a home. See your break-even year, equity built, and which option saves you more money.</p>
+            <a href="#calculator" class="hero-cta">
+                Compare Now
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+            <div class="hero-badges">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Free
+                </div>
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    No signup required
+                </div>
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    Real-time rates
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Rates Banner -->
+        <div class="rates-banner" id="ratesBanner">
+            <div class="rates-banner-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                Current Rates
+            </div>
+            <div class="rate-item">
+                <span class="rate-label">30-Year Fixed:</span>
+                <span class="rate-value" id="rate30yr">--</span>
+            </div>
+            <div class="rate-item">
+                <span class="rate-label">15-Year Fixed:</span>
+                <span class="rate-value" id="rate15yr">--</span>
+            </div>
+            <span class="rates-updated" id="ratesUpdated">Loading rates...</span>
+            <div class="rates-disclaimer">
+                National avg. via <a href="https://fred.stlouisfed.org/" target="_blank" rel="noopener">FRED</a> &mdash; not a loan offer. Your rate may vary.
+            </div>
+        </div>
+
+        <!-- Calculator Section -->
+        <section id="calculator">
+
+        <!-- Your Rent Card -->
+        <div class="card">
+            <h2>Your Rent</h2>
+            <div class="form-section">
+                <div class="section-label">Current Rental Costs</div>
+                <div class="info-grid-3">
+                    <div class="info-item required">
+                        <div class="info-label">Monthly Rent</div>
+                        <div class="input-row">
+                            <span class="input-prefix">$</span>
+                            <input type="text" class="info-input" id="monthlyRent" value="" placeholder="e.g. 2,000">
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Annual Rent Increase</div>
+                        <div class="input-row">
+                            <input type="text" class="info-input" id="rentIncrease" value="3" placeholder="3">
+                            <span class="input-prefix">%</span>
+                        </div>
+                        <div class="input-hint">Typical: 3-5% per year</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Renter's Insurance</div>
+                        <div class="input-row">
+                            <span class="input-prefix">$</span>
+                            <input type="text" class="info-input" id="rentersInsurance" value="30" placeholder="30">
+                        </div>
+                        <div class="input-hint">Per month</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Home Purchase Card -->
+        <div class="card">
+            <h2>Home Purchase</h2>
+            <div class="form-section">
+                <div class="section-label">Purchase Details</div>
+                <div class="info-grid-2">
+                    <div class="info-item required">
+                        <div class="info-label">Home Price</div>
+                        <div class="input-row">
+                            <span class="input-prefix">$</span>
+                            <input type="text" class="info-input" id="homePrice" value="" placeholder="e.g. 400,000">
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">
+                            Down Payment
+                            <button class="dp-toggle" id="dpToggle" title="Toggle dollar/percent mode">%</button>
+                        </div>
+                        <div class="input-row">
+                            <span class="input-prefix" id="dpPrefix"></span>
+                            <input type="text" class="info-input" id="downPayment" value="20" placeholder="20">
+                        </div>
+                        <div class="input-hint" id="dpHint">Percentage of home price</div>
+                    </div>
+                </div>
+                <div class="info-grid-2" style="margin-top: 15px;">
+                    <div class="info-item">
+                        <div class="info-label">Loan Term</div>
+                        <div class="input-row">
+                            <button class="term-btn active" id="term30" data-term="30">30-Year</button>
+                            <button class="term-btn" id="term15" data-term="15">15-Year</button>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Interest Rate</div>
+                        <div class="input-row">
+                            <input type="text" class="info-input" id="interestRate" value="" placeholder="Loading...">
+                            <span class="input-prefix">%</span>
+                        </div>
+                        <div class="input-hint">Auto-filled from current rates</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-section">
+                <div class="section-label optional">Ongoing Costs</div>
+                <div class="info-grid-2">
+                    <div class="info-item">
+                        <div class="info-label">Property Tax Rate</div>
+                        <div class="input-row">
+                            <input type="text" class="info-input" id="propertyTaxRate" value="1.1" placeholder="1.1">
+                            <span class="input-prefix">%</span>
+                        </div>
+                        <div class="input-hint">Annual, as % of home value</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Homeowner's Insurance</div>
+                        <div class="input-row">
+                            <span class="input-prefix">$</span>
+                            <input type="text" class="info-input" id="homeInsurance" value="150" placeholder="150">
+                        </div>
+                        <div class="input-hint">Per month</div>
+                    </div>
+                </div>
+                <div class="info-grid-2" style="margin-top: 15px;">
+                    <div class="info-item">
+                        <div class="info-label">Maintenance</div>
+                        <div class="input-row">
+                            <input type="text" class="info-input" id="maintenance" value="1" placeholder="1">
+                            <span class="input-prefix">%</span>
+                        </div>
+                        <div class="input-hint">% of home value per year</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">HOA Fees</div>
+                        <div class="input-row">
+                            <span class="input-prefix">$</span>
+                            <input type="text" class="info-input" id="hoaFees" value="0" placeholder="0">
+                        </div>
+                        <div class="input-hint">Per month</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assumptions Card -->
+        <div class="card">
+            <h2>Assumptions</h2>
+            <div class="form-section">
+                <div class="section-label optional">Adjust to fit your scenario</div>
+                <div class="slider-container">
+                    <div class="slider-header">
+                        <span class="slider-label">Time horizon:</span>
+                        <span class="age-display" id="horizonDisplay">10 years</span>
+                    </div>
+                    <input type="range" id="horizonSlider" min="5" max="30" value="10">
+                    <div class="age-markers">
+                        <span>5 yr</span>
+                        <span>10 yr</span>
+                        <span>15 yr</span>
+                        <span>20 yr</span>
+                        <span>25 yr</span>
+                        <span>30 yr</span>
+                    </div>
+                </div>
+                <div class="info-grid-2" style="margin-top: 15px;">
+                    <div class="info-item">
+                        <div class="info-label">Home Appreciation Rate</div>
+                        <div class="input-row">
+                            <input type="text" class="info-input" id="appreciationRate" value="" placeholder="Loading...">
+                            <span class="input-prefix">%</span>
+                        </div>
+                        <div class="input-hint" id="appreciationHint">Annual, auto-filled from market data</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Investment Return Rate</div>
+                        <div class="input-row">
+                            <input type="text" class="info-input" id="investmentReturn" value="7" placeholder="7">
+                            <span class="input-prefix">%</span>
+                        </div>
+                        <div class="input-hint">Opportunity cost of down payment</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Verdict Card -->
+        <div class="card" id="verdictCard" style="display:none;">
+            <h2>The Verdict</h2>
+            <div class="verdict-headline" id="verdictHeadline"></div>
+            <div class="results">
+                <div class="result-box">
+                    <div class="result-label">Total Cost to Rent</div>
+                    <div class="result-value rvb-rent" id="totalRentCost">--</div>
+                    <div class="result-sub" id="totalRentSub">Over 10 years</div>
+                </div>
+                <div class="result-box">
+                    <div class="result-label">Total Cost to Buy</div>
+                    <div class="result-value rvb-buy" id="totalBuyCost">--</div>
+                    <div class="result-sub" id="totalBuySub">Over 10 years</div>
+                </div>
+                <div class="result-box highlight">
+                    <div class="result-label">You Save</div>
+                    <div class="result-value green" id="totalSavings">--</div>
+                    <div class="result-sub" id="totalSavingsSub">by buying</div>
+                </div>
+                <div class="result-box">
+                    <div class="result-label">Home Equity Built</div>
+                    <div class="result-value" id="totalEquity">--</div>
+                    <div class="result-sub">Principal + appreciation</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cost Over Time Chart -->
+        <div class="card" id="chartCard" style="display:none;">
+            <h2>Cost Over Time</h2>
+            <div class="chart-container">
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: #ff9800;"></div>
+                        <span>Cumulative Rent Cost</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-dot" style="background: #4fc3f7;"></div>
+                        <span>Cumulative Buy Cost</span>
+                    </div>
+                </div>
+                <canvas id="costChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Year-by-Year Comparison Table -->
+        <div class="card" id="tableCard" style="display:none;">
+            <h2>
+                Year-by-Year Comparison
+                <button class="amortization-toggle" id="tableToggle">Show Details</button>
+            </h2>
+            <div class="amortization-content" id="tableContent">
+                <div class="amortization-scroll">
+                    <table class="comparison-table" id="comparisonTable">
+                        <thead>
+                            <tr>
+                                <th>Year</th>
+                                <th>Monthly Rent</th>
+                                <th>Monthly Buy</th>
+                                <th>Cumulative Rent</th>
+                                <th>Cumulative Buy</th>
+                                <th>Home Equity</th>
+                            </tr>
+                        </thead>
+                        <tbody id="comparisonBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Market Context Card -->
+        <div class="card" id="marketCard">
+            <h2>Market Context</h2>
+            <div class="results">
+                <div class="result-box">
+                    <div class="result-label">Home Price Trend (12-mo)</div>
+                    <div class="result-value" id="homePriceTrend">--</div>
+                    <div class="result-sub" id="homePriceTrendSub">Loading...</div>
+                </div>
+                <div class="result-box highlight">
+                    <div class="result-label">Housing Affordability Index</div>
+                    <div class="result-value" id="affordIndex">--</div>
+                    <div class="result-sub" id="affordInterpretation">Loading...</div>
+                </div>
+            </div>
+            <div class="afford-explainer" id="affordExplainer" style="display:none;">
+                <div class="afford-plain" id="affordPlain"></div>
+                <div class="afford-scale">
+                    <div class="afford-scale-bar">
+                        <div class="afford-zone afford-zone-red"></div>
+                        <div class="afford-zone afford-zone-orange"></div>
+                        <div class="afford-zone afford-zone-yellow"></div>
+                        <div class="afford-zone afford-zone-green"></div>
+                    </div>
+                    <div class="afford-marker" id="affordMarker">
+                        <div class="afford-marker-dot"></div>
+                        <div class="afford-marker-label" id="affordMarkerLabel">--</div>
+                    </div>
+                    <div class="afford-scale-labels">
+                        <span>60</span>
+                        <span>80</span>
+                        <span>100</span>
+                        <span>130</span>
+                        <span>160+</span>
+                    </div>
+                    <div class="afford-scale-tags">
+                        <span class="afford-tag-red">Unaffordable</span>
+                        <span class="afford-tag-orange">Stretched</span>
+                        <span class="afford-tag-yellow">Tight</span>
+                        <span class="afford-tag-green">Comfortable</span>
+                    </div>
+                </div>
+                <div class="afford-context">The Housing Affordability Index measures whether a typical family earns enough to qualify for a mortgage on a typical home. A value of 100 means they earn exactly enough. Data from the Federal Reserve (FRED), updated monthly.</div>
+            </div>
+        </div>
+
+        <!-- CTA Banners -->
+        <div class="savings-banner" id="ctaAffordability" style="display:none;">
+            <h3 style="color: var(--color-primary);">Ready to Buy? See How Much You Can Afford</h3>
+            <p style="color: #aaa; margin: 10px 0 20px;">Use our affordability calculator to find your maximum home price based on your income and debts.</p>
+            <a href="/affordability/" class="hero-cta" style="display:inline-flex;">
+                Check Affordability
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+
+        <div class="savings-banner" id="ctaPayoff" style="display:none;">
+            <h3 style="color: var(--color-accent);">Already Have a Mortgage? Pay It Off Early</h3>
+            <p style="color: #aaa; margin: 10px 0 20px;">See how extra payments can save you thousands in interest and help you become mortgage-free years sooner.</p>
+            <a href="/" class="hero-cta" style="display:inline-flex; background: linear-gradient(135deg, var(--color-accent) 0%, #388e3c 100%);">
+                Calculate Payoff Plan
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+
+        </section><!-- End calculator section -->
+
+        <!-- FAQ Section -->
+        <section class="card faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is it cheaper to rent or buy a home?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    It depends on your local market, how long you plan to stay, and current interest rates. In the short term, renting is almost always cheaper because buying involves large upfront costs and early mortgage payments are mostly interest. However, buying typically becomes cheaper after 4-7 years as you build equity through principal payments and home appreciation. Use the calculator above to find your specific break-even point.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What is the break-even point for buying vs renting?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    The break-even point is the year when the total cost of buying (mortgage payments, taxes, insurance, maintenance, minus equity gained) drops below the total cost of renting (rent plus renter's insurance). This typically occurs between 4-7 years, but it varies widely based on home prices, rent levels, interest rates, and appreciation rates in your area.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What costs does this calculator include?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    For renting: monthly rent (with annual increases) and renter's insurance. For buying: mortgage principal &amp; interest, property taxes, homeowner's insurance, maintenance, HOA fees, and PMI (if applicable). It also accounts for the opportunity cost of your down payment (what it could have earned if invested) and the equity you build through principal payments and home appreciation.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How does home appreciation affect the rent vs buy decision?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    Home appreciation builds equity on top of your principal payments, making buying more attractive over time. Historically, U.S. home prices have appreciated about 3-4% per year on average, though this varies significantly by location and time period. Higher appreciation strongly favors buying, while stagnant or declining prices favor renting.
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Should I buy a home if I might move in a few years?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    If you plan to move within 3-5 years, renting is often the better financial choice. Buying involves significant transaction costs (closing costs at purchase and sale, agent commissions), and most of your early mortgage payments go toward interest rather than building equity. The longer you plan to stay in one place, the more buying makes sense financially.
+                </div>
+            </div>
+        </section>
+
+        <!-- Email Capture Section -->
+        <section class="email-capture">
+            <h2 class="email-capture-title">Get Weekly Rate Updates</h2>
+            <p class="email-capture-subtitle">Be the first to know when rates drop. Free weekly digest with market insights.</p>
+            <form class="email-form" id="emailForm">
+                <input type="email" class="email-input" placeholder="your@email.com" required>
+                <button type="submit" class="email-submit">Subscribe</button>
+            </form>
+            <p class="email-note">Join 1,000+ homeowners tracking mortgage rates</p>
+        </section>
+
+        <!-- Comprehensive Footer -->
+        <footer class="footer-comprehensive" id="about">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Mortgage Freedom Calculator</h3>
+                    <p>Free tools to help you decide whether to rent or buy, plan your home purchase, and become mortgage-free sooner.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="/">Payoff Calculator</a></li>
+                        <li><a href="/affordability/">Affordability Calculator</a></li>
+                        <li><a href="/rent-vs-buy/">Rent vs Buy Calculator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Learn</h4>
+                    <ul>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/blog/how-extra-payments-work/">How Extra Payments Work</a></li>
+                        <li><a href="/blog/what-age-pay-off-mortgage/">Payoff Age Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/#about">About Us</a></li>
+                        <li><a href="mailto:contact@mortgagefreedomcalculator.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-attribution">Mortgage rate data provided by Federal Reserve (FRED)</p>
+                <p class="footer-copyright">&copy; 2026 Mortgage Freedom Calculator. All rights reserved.</p>
+                <p class="footer-disclaimer">This calculator provides estimates for educational purposes only. Actual costs will vary based on your specific situation, location, and market conditions. Always consult with a financial professional before making major housing decisions.</p>
+            </div>
+        </footer>
+    </main>
+
+    <div class="toast" id="toast">Link copied to clipboard!</div>
+    <div class="chart-tooltip" id="chartTooltip"></div>
+
+    <!-- Chat Widget -->
+    <link rel="stylesheet" href="/frontend/chat-widget/chat-widget.css">
+    <script src="/frontend/chat-widget/chat-widget.js" defer></script>
+
+    <style>
+        /* Down Payment Toggle */
+        .dp-toggle {
+            background: var(--surface-input);
+            border: 1px solid var(--border-input);
+            color: var(--color-primary);
+            padding: 2px 8px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 8px;
+            transition: all var(--transition-fast);
+        }
+        .dp-toggle:hover {
+            background: rgba(var(--color-primary-rgb), 0.15);
+        }
+
+        /* Term Buttons */
+        .term-btn {
+            flex: 1;
+            background: var(--surface-input);
+            border: 1px solid var(--border-input);
+            color: var(--text-muted);
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            transition: all var(--transition-fast);
+        }
+        .term-btn.active {
+            background: rgba(var(--color-primary-rgb), 0.2);
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+        .term-btn:hover:not(.active) {
+            border-color: rgba(var(--color-primary-rgb), 0.5);
+            color: var(--text-heading);
+        }
+
+        /* Verdict Headline */
+        .verdict-headline {
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            padding: 15px 20px;
+            border-radius: var(--radius-lg);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .verdict-headline.buy-wins {
+            background: rgba(var(--color-accent-rgb), 0.15);
+            color: var(--color-accent);
+            border: 1px solid rgba(var(--color-accent-rgb), 0.3);
+        }
+        .verdict-headline.rent-wins {
+            background: rgba(255, 152, 0, 0.15);
+            color: #ff9800;
+            border: 1px solid rgba(255, 152, 0, 0.3);
+        }
+
+        /* Rent vs Buy specific result colors */
+        .rvb-rent { color: #ff9800 !important; }
+        .rvb-buy { color: var(--color-primary) !important; }
+
+        /* Break-even row highlight */
+        .breakeven-row {
+            background: rgba(var(--color-accent-rgb), 0.15) !important;
+        }
+        .breakeven-row td {
+            font-weight: 600;
+            color: var(--color-accent);
+        }
+
+        /* Affordability Explainer (reused from affordability page) */
+        .afford-explainer {
+            margin-top: 15px;
+            background: var(--surface-item);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+        }
+        .afford-plain {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .afford-context {
+            color: var(--text-dimmed);
+            font-size: 0.8rem;
+            line-height: 1.5;
+            margin-top: 16px;
+        }
+        .afford-scale {
+            position: relative;
+            margin-bottom: 8px;
+        }
+        .afford-scale-bar {
+            display: flex;
+            height: 12px;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .afford-zone { height: 100%; }
+        .afford-zone-red { flex: 20; background: #ef5350; }
+        .afford-zone-orange { flex: 20; background: #ff9800; }
+        .afford-zone-yellow { flex: 30; background: #ffb74d; }
+        .afford-zone-green { flex: 30; background: var(--color-accent); }
+        .afford-marker {
+            position: absolute;
+            top: -6px;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: left 0.6s ease;
+        }
+        .afford-marker-dot {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--text-heading);
+            border: 3px solid var(--bg-gradient-start);
+            box-shadow: 0 0 0 2px var(--text-heading), 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .afford-marker-label {
+            margin-top: 4px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-heading);
+            white-space: nowrap;
+        }
+        .afford-scale-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 28px;
+            font-size: 0.7rem;
+            color: var(--text-dimmed);
+        }
+        .afford-scale-tags {
+            display: flex;
+            margin-top: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+        .afford-tag-red { flex: 20; text-align: center; color: #ef5350; }
+        .afford-tag-orange { flex: 20; text-align: center; color: #ff9800; }
+        .afford-tag-yellow { flex: 30; text-align: center; color: #ffb74d; }
+        .afford-tag-green { flex: 30; text-align: center; color: var(--color-accent); }
+    </style>
+
+    <script>
+    (function() {
+        // ===== State =====
+        let dpMode = 'percent'; // 'dollar' or 'percent'
+        let loanTerm = 30;
+        let rate30 = null;
+        let rate15 = null;
+
+        // ===== DOM Helpers =====
+        const $ = id => document.getElementById(id);
+
+        function parseCurrency(val) {
+            return parseFloat((val || '').replace(/[^0-9.]/g, '')) || 0;
+        }
+
+        function formatCurrency(amount) {
+            if (!isFinite(amount)) return 'N/A';
+            return '$' + Math.round(amount).toLocaleString('en-US');
+        }
+
+        function formatCurrencyFull(amount) {
+            if (!isFinite(amount)) return 'N/A';
+            return '$' + amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function formatInputAsCurrency(input) {
+            let value = input.value.replace(/[^0-9.]/g, '');
+            const parts = value.split('.');
+            if (parts.length > 2) value = parts[0] + '.' + parts.slice(1).join('');
+            if (parts[0]) parts[0] = parseInt(parts[0]).toLocaleString('en-US');
+            input.value = parts.join('.');
+        }
+
+        // ===== Core Math =====
+        function calcMonthlyPI(loanAmount, monthlyRate, months) {
+            if (loanAmount <= 0) return 0;
+            if (monthlyRate === 0) return loanAmount / months;
+            return loanAmount * (monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+        }
+
+        function getDownPaymentDollar(homePrice) {
+            if (dpMode === 'percent') {
+                const pct = parseCurrency($('downPayment').value) / 100;
+                return homePrice * pct;
+            }
+            return parseCurrency($('downPayment').value);
+        }
+
+        // ===== Main Calculation =====
+        function calculate() {
+            const monthlyRent = parseCurrency($('monthlyRent').value);
+            const homePrice = parseCurrency($('homePrice').value);
+            const annualRate = parseFloat($('interestRate').value) || 0;
+
+            if (monthlyRent <= 0 || homePrice <= 0 || annualRate <= 0) {
+                $('verdictCard').style.display = 'none';
+                $('chartCard').style.display = 'none';
+                $('tableCard').style.display = 'none';
+                $('ctaAffordability').style.display = 'none';
+                $('ctaPayoff').style.display = 'none';
+                return;
+            }
+
+            const rentIncrease = (parseFloat($('rentIncrease').value) || 0) / 100;
+            const rentersInsurance = parseCurrency($('rentersInsurance').value);
+            const dpDollar = getDownPaymentDollar(homePrice);
+            const loanAmount = Math.max(0, homePrice - dpDollar);
+            const monthlyRate = annualRate / 100 / 12;
+            const months = loanTerm * 12;
+            const propTaxRate = (parseFloat($('propertyTaxRate').value) || 0) / 100;
+            const homeInsurance = parseCurrency($('homeInsurance').value);
+            const maintenancePct = (parseFloat($('maintenance').value) || 0) / 100;
+            const hoaFees = parseCurrency($('hoaFees').value);
+            const horizon = parseInt($('horizonSlider').value);
+            const appreciationRate = (parseFloat($('appreciationRate').value) || 0) / 100;
+            const investmentReturn = (parseFloat($('investmentReturn').value) || 0) / 100;
+
+            // PMI: if down payment < 20%, charge 0.5% of loan per year
+            const dpPercent = homePrice > 0 ? dpDollar / homePrice : 0;
+            const hasPMI = dpPercent < 0.2;
+
+            // Monthly P&I
+            const monthlyPI = calcMonthlyPI(loanAmount, monthlyRate, months);
+
+            // Year-by-year calculation
+            let cumulativeRent = 0;
+            let cumulativeBuy = 0;
+            let currentRent = monthlyRent;
+            let remainingBalance = loanAmount;
+            let currentHomeValue = homePrice;
+            let breakEvenYear = -1;
+            let prevRentAhead = false;
+
+            const yearData = [];
+
+            for (let year = 1; year <= horizon; year++) {
+                // --- RENT COSTS for this year ---
+                const yearlyRent = currentRent * 12;
+                const yearlyRentersIns = rentersInsurance * 12;
+                const yearRentTotal = yearlyRent + yearlyRentersIns;
+                cumulativeRent += yearRentTotal;
+
+                // --- BUY COSTS for this year ---
+                // Mortgage P&I
+                const yearlyPI = monthlyPI * 12;
+
+                // Property tax based on current home value
+                const yearlyTax = currentHomeValue * propTaxRate;
+
+                // Insurance
+                const yearlyHomeIns = homeInsurance * 12;
+
+                // Maintenance
+                const yearlyMaint = currentHomeValue * maintenancePct;
+
+                // HOA
+                const yearlyHOA = hoaFees * 12;
+
+                // PMI (if applicable and balance > 80% of current home value)
+                let yearlyPMI = 0;
+                if (hasPMI && remainingBalance > currentHomeValue * 0.8) {
+                    yearlyPMI = remainingBalance * 0.005;
+                }
+
+                // Opportunity cost of down payment (compounded)
+                const dpOpportunityCost = dpDollar * Math.pow(1 + investmentReturn, year) - dpDollar * Math.pow(1 + investmentReturn, year - 1);
+
+                // Total cash out for buying this year
+                const yearBuyCashOut = yearlyPI + yearlyTax + yearlyHomeIns + yearlyMaint + yearlyHOA + yearlyPMI + dpOpportunityCost;
+
+                // --- EQUITY CALCULATION ---
+                // Calculate principal paid this year
+                let principalPaidThisYear = 0;
+                let bal = remainingBalance;
+                for (let m = 0; m < 12; m++) {
+                    if (bal <= 0) break;
+                    const interestPayment = bal * monthlyRate;
+                    const principalPayment = Math.min(monthlyPI - interestPayment, bal);
+                    principalPaidThisYear += principalPayment;
+                    bal -= principalPayment;
+                }
+                remainingBalance = Math.max(0, bal);
+
+                // Home appreciation
+                currentHomeValue *= (1 + appreciationRate);
+
+                // Total equity = home value - remaining balance
+                const equity = currentHomeValue - remainingBalance;
+
+                // True cost of buying = cash out - equity gained from start
+                // Equity gained = current equity - initial equity (down payment)
+                const equityGained = equity - dpDollar;
+
+                // True cost = all cash out - equity gained (net wealth effect)
+                cumulativeBuy += yearBuyCashOut;
+                const trueBuyCost = cumulativeBuy - equityGained;
+
+                // Monthly equivalents
+                const monthlyRentEquiv = yearRentTotal / 12;
+                const monthlyBuyEquiv = yearBuyCashOut / 12;
+
+                // Check for break-even
+                const rentAhead = cumulativeRent > trueBuyCost;
+                if (year > 1 && rentAhead && !prevRentAhead && breakEvenYear === -1) {
+                    breakEvenYear = year;
+                }
+                prevRentAhead = rentAhead;
+
+                yearData.push({
+                    year,
+                    monthlyRent: currentRent + rentersInsurance / 1, // simplified
+                    monthlyBuy: monthlyBuyEquiv,
+                    cumulativeRent,
+                    cumulativeBuy: trueBuyCost,
+                    equity,
+                    isBreakEven: false
+                });
+
+                // Increase rent for next year
+                currentRent *= (1 + rentIncrease);
+            }
+
+            // Mark break-even year
+            if (breakEvenYear > 0) {
+                yearData[breakEvenYear - 1].isBreakEven = true;
+            }
+
+            const finalRentCost = cumulativeRent;
+            const finalEquity = yearData[yearData.length - 1].equity;
+            const equityGainedFinal = finalEquity - dpDollar;
+            const finalBuyCost = cumulativeBuy - equityGainedFinal;
+            const savings = Math.abs(finalRentCost - finalBuyCost);
+            const buyWins = finalBuyCost < finalRentCost;
+
+            // Update verdict
+            $('verdictCard').style.display = '';
+            $('chartCard').style.display = '';
+            $('tableCard').style.display = '';
+            $('ctaAffordability').style.display = '';
+            $('ctaPayoff').style.display = '';
+
+            const headline = $('verdictHeadline');
+            if (buyWins) {
+                if (breakEvenYear > 0) {
+                    headline.textContent = `Buying is cheaper after year ${breakEvenYear}`;
+                } else {
+                    headline.textContent = `Buying is cheaper over ${horizon} years`;
+                }
+                headline.className = 'verdict-headline buy-wins';
+            } else {
+                headline.textContent = `Renting is cheaper over ${horizon} years`;
+                headline.className = 'verdict-headline rent-wins';
+            }
+
+            $('totalRentCost').textContent = formatCurrency(finalRentCost);
+            $('totalRentSub').textContent = `Over ${horizon} years`;
+            $('totalBuyCost').textContent = formatCurrency(finalBuyCost);
+            $('totalBuySub').textContent = `Over ${horizon} years (net of equity)`;
+            $('totalSavings').textContent = formatCurrency(savings);
+            $('totalSavingsSub').textContent = `by ${buyWins ? 'buying' : 'renting'}`;
+            $('totalEquity').textContent = formatCurrency(finalEquity);
+
+            // Draw chart
+            drawChart(yearData);
+
+            // Build table
+            buildTable(yearData);
+        }
+
+        // ===== Chart =====
+        let chartState = { yearData: [] };
+
+        function drawChart(yearData) {
+            chartState.yearData = yearData;
+
+            const canvas = $('costChart');
+            const ctx = canvas.getContext('2d');
+
+            const rect = canvas.getBoundingClientRect();
+            canvas.width = rect.width * window.devicePixelRatio;
+            canvas.height = 300 * window.devicePixelRatio;
+            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+
+            const width = rect.width;
+            const height = 300;
+            const padding = { top: 20, right: 20, bottom: 40, left: 80 };
+            const chartWidth = width - padding.left - padding.right;
+            const chartHeight = height - padding.top - padding.bottom;
+
+            chartState.padding = padding;
+            chartState.width = width;
+            chartState.chartWidth = chartWidth;
+            chartState.chartHeight = chartHeight;
+
+            ctx.clearRect(0, 0, width, height);
+
+            const maxCost = Math.max(
+                ...yearData.map(d => d.cumulativeRent),
+                ...yearData.map(d => d.cumulativeBuy)
+            );
+            const maxYears = yearData.length;
+            chartState.maxCost = maxCost;
+            chartState.maxYears = maxYears;
+
+            if (maxCost === 0 || maxYears === 0) return;
+
+            // Grid lines
+            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 5; i++) {
+                const y = padding.top + (chartHeight * i / 5);
+                ctx.beginPath();
+                ctx.moveTo(padding.left, y);
+                ctx.lineTo(width - padding.right, y);
+                ctx.stroke();
+
+                ctx.fillStyle = '#888';
+                ctx.font = '11px system-ui';
+                ctx.textAlign = 'right';
+                const value = maxCost * (1 - i / 5);
+                if (value >= 1000000) {
+                    ctx.fillText('$' + (value / 1000000).toFixed(1) + 'M', padding.left - 10, y + 4);
+                } else {
+                    ctx.fillText('$' + Math.round(value / 1000) + 'k', padding.left - 10, y + 4);
+                }
+            }
+
+            // X-axis labels
+            ctx.textAlign = 'center';
+            ctx.fillStyle = '#888';
+            const yearStep = Math.max(1, Math.ceil(maxYears / 8));
+            for (let i = 0; i <= maxYears; i += yearStep) {
+                if (i === 0) continue;
+                const idx = i - 1;
+                if (idx < yearData.length) {
+                    const x = padding.left + (chartWidth * i / maxYears);
+                    ctx.fillText('Yr ' + i, x, height - 10);
+                }
+            }
+
+            // Find break-even for dashed line
+            let breakEvenX = -1;
+            for (let i = 0; i < yearData.length; i++) {
+                if (yearData[i].isBreakEven) {
+                    breakEvenX = padding.left + (chartWidth * yearData[i].year / maxYears);
+                    break;
+                }
+            }
+
+            // Draw break-even dashed line
+            if (breakEvenX > 0) {
+                ctx.setLineDash([6, 4]);
+                ctx.strokeStyle = 'rgba(102, 187, 106, 0.6)';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(breakEvenX, padding.top);
+                ctx.lineTo(breakEvenX, padding.top + chartHeight);
+                ctx.stroke();
+                ctx.setLineDash([]);
+
+                // Break-even label
+                ctx.fillStyle = 'var(--color-accent)';
+                ctx.font = 'bold 11px system-ui';
+                ctx.fillStyle = '#66bb6a';
+                ctx.fillText('Break-even', breakEvenX, padding.top - 6);
+            }
+
+            // Rent line (orange)
+            ctx.beginPath();
+            ctx.strokeStyle = '#ff9800';
+            ctx.lineWidth = 3;
+            yearData.forEach((d, i) => {
+                const x = padding.left + (chartWidth * d.year / maxYears);
+                const y = padding.top + chartHeight - (chartHeight * d.cumulativeRent / maxCost);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+
+            // Rent dots
+            yearData.forEach(d => {
+                const x = padding.left + (chartWidth * d.year / maxYears);
+                const y = padding.top + chartHeight - (chartHeight * d.cumulativeRent / maxCost);
+                ctx.beginPath();
+                ctx.arc(x, y, 4, 0, Math.PI * 2);
+                ctx.fillStyle = '#ff9800';
+                ctx.fill();
+            });
+
+            // Buy line (blue)
+            ctx.beginPath();
+            ctx.strokeStyle = '#4fc3f7';
+            ctx.lineWidth = 3;
+            yearData.forEach((d, i) => {
+                const x = padding.left + (chartWidth * d.year / maxYears);
+                const y = padding.top + chartHeight - (chartHeight * d.cumulativeBuy / maxCost);
+                if (i === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+
+            // Buy dots
+            yearData.forEach(d => {
+                const x = padding.left + (chartWidth * d.year / maxYears);
+                const y = padding.top + chartHeight - (chartHeight * d.cumulativeBuy / maxCost);
+                ctx.beginPath();
+                ctx.arc(x, y, 4, 0, Math.PI * 2);
+                ctx.fillStyle = '#4fc3f7';
+                ctx.fill();
+            });
+        }
+
+        // Chart hover
+        function handleChartHover(e) {
+            const canvas = $('costChart');
+            const tooltip = $('chartTooltip');
+            const rect = canvas.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const { padding, chartWidth, chartHeight, maxCost, maxYears, yearData } = chartState;
+
+            if (!maxYears || !yearData.length) return;
+            if (x < padding.left || x > padding.left + chartWidth || y < padding.top || y > padding.top + chartHeight) {
+                tooltip.style.display = 'none';
+                return;
+            }
+
+            const yearAtCursor = ((x - padding.left) / chartWidth) * maxYears;
+            const closestYear = Math.max(1, Math.min(maxYears, Math.round(yearAtCursor)));
+            const data = yearData[closestYear - 1];
+            if (!data) { tooltip.style.display = 'none'; return; }
+
+            let html = `<strong>Year ${data.year}</strong><br>`;
+            html += `<span style="color:#ff9800">Rent: ${formatCurrency(data.cumulativeRent)}</span><br>`;
+            html += `<span style="color:#4fc3f7">Buy: ${formatCurrency(data.cumulativeBuy)}</span><br>`;
+            html += `<span style="color:#66bb6a">Equity: ${formatCurrency(data.equity)}</span>`;
+
+            tooltip.innerHTML = html;
+            tooltip.style.display = 'block';
+
+            let tooltipX = e.clientX + 15;
+            let tooltipY = e.clientY - 10;
+            const tooltipRect = tooltip.getBoundingClientRect();
+            if (tooltipX + tooltipRect.width > window.innerWidth) {
+                tooltipX = e.clientX - tooltipRect.width - 15;
+            }
+            tooltip.style.left = tooltipX + 'px';
+            tooltip.style.top = tooltipY + 'px';
+        }
+
+        $('costChart').addEventListener('mousemove', handleChartHover);
+        $('costChart').addEventListener('mouseleave', () => {
+            $('chartTooltip').style.display = 'none';
+        });
+
+        // ===== Table =====
+        function buildTable(yearData) {
+            const tbody = $('comparisonBody');
+            tbody.innerHTML = '';
+
+            yearData.forEach(d => {
+                const tr = document.createElement('tr');
+                if (d.isBreakEven) tr.className = 'breakeven-row';
+
+                tr.innerHTML = `
+                    <td>Year ${d.year}${d.isBreakEven ? ' *' : ''}</td>
+                    <td>${formatCurrencyFull(d.monthlyRent)}</td>
+                    <td>${formatCurrencyFull(d.monthlyBuy)}</td>
+                    <td>${formatCurrency(d.cumulativeRent)}</td>
+                    <td>${formatCurrency(d.cumulativeBuy)}</td>
+                    <td>${formatCurrency(d.equity)}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // ===== Down Payment Toggle =====
+        $('dpToggle').addEventListener('click', () => {
+            if (dpMode === 'percent') {
+                dpMode = 'dollar';
+                $('dpToggle').textContent = '$';
+                $('dpPrefix').textContent = '$';
+                $('downPayment').value = '';
+                $('downPayment').placeholder = 'e.g. 80,000';
+                $('dpHint').textContent = 'Dollar amount for down payment';
+            } else {
+                dpMode = 'percent';
+                $('dpToggle').textContent = '%';
+                $('dpPrefix').textContent = '';
+                $('downPayment').value = '20';
+                $('downPayment').placeholder = 'e.g. 20';
+                $('dpHint').textContent = 'Percentage of home price';
+            }
+            calculate();
+        });
+
+        // ===== Loan Term Toggle =====
+        document.querySelectorAll('.term-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.term-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                loanTerm = parseInt(btn.dataset.term);
+
+                if (loanTerm === 15 && rate15 !== null) {
+                    $('interestRate').value = rate15;
+                } else if (loanTerm === 30 && rate30 !== null) {
+                    $('interestRate').value = rate30;
+                }
+                calculate();
+            });
+        });
+
+        // ===== Horizon Slider =====
+        $('horizonSlider').addEventListener('input', () => {
+            $('horizonDisplay').textContent = $('horizonSlider').value + ' years';
+            calculate();
+        });
+
+        // ===== Table Toggle =====
+        $('tableToggle').addEventListener('click', () => {
+            const content = $('tableContent');
+            const btn = $('tableToggle');
+            content.classList.toggle('open');
+            btn.textContent = content.classList.contains('open') ? 'Hide Details' : 'Show Details';
+        });
+
+        // ===== Input Event Listeners =====
+        ['monthlyRent', 'rentersInsurance', 'homePrice', 'homeInsurance', 'hoaFees'].forEach(id => {
+            $(id).addEventListener('input', function() {
+                formatInputAsCurrency(this);
+                calculate();
+            });
+            $(id).addEventListener('change', calculate);
+        });
+
+        ['downPayment'].forEach(id => {
+            $(id).addEventListener('input', function() {
+                if (dpMode === 'dollar') formatInputAsCurrency(this);
+                calculate();
+            });
+            $(id).addEventListener('change', calculate);
+        });
+
+        ['interestRate', 'propertyTaxRate', 'rentIncrease', 'maintenance', 'appreciationRate', 'investmentReturn'].forEach(id => {
+            $(id).addEventListener('input', calculate);
+            $(id).addEventListener('change', calculate);
+        });
+
+        // ===== FAQ accordion =====
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isOpen = faqItem.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('open'));
+                if (!isOpen) faqItem.classList.add('open');
+            });
+        });
+
+        // ===== Mobile menu toggle =====
+        const mobileMenuBtn = $('mobileMenuBtn');
+        const navLinks = $('navLinks');
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => navLinks.classList.remove('open'));
+            });
+        }
+
+        // ===== Smooth scroll =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // ===== Fetch Rates =====
+        async function fetchRates() {
+            try {
+                const response = await fetch('/api/rates');
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.rates) {
+                        if (data.rates['30yr']) {
+                            rate30 = parseFloat(data.rates['30yr']).toFixed(2);
+                            $('rate30yr').textContent = rate30 + '%';
+                        }
+                        if (data.rates['15yr']) {
+                            rate15 = parseFloat(data.rates['15yr']).toFixed(2);
+                            $('rate15yr').textContent = rate15 + '%';
+                        }
+                        $('ratesUpdated').textContent = 'Updated: Today';
+
+                        if (loanTerm === 30 && rate30) {
+                            $('interestRate').value = rate30;
+                        } else if (loanTerm === 15 && rate15) {
+                            $('interestRate').value = rate15;
+                        }
+                        $('interestRate').placeholder = 'e.g. 6.5';
+                        calculate();
+                    }
+                } else {
+                    $('ratesUpdated').textContent = 'Rates unavailable';
+                    $('interestRate').placeholder = 'e.g. 6.5';
+                }
+            } catch (error) {
+                console.error('Failed to fetch rates:', error);
+                $('ratesUpdated').textContent = 'Rates unavailable';
+                $('interestRate').placeholder = 'e.g. 6.5';
+            }
+        }
+
+        // ===== Fetch Home Prices =====
+        async function fetchHomePrices() {
+            try {
+                const response = await fetch('/api/home-prices?months=12');
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.change) {
+                        const pct = data.change.percent;
+                        const color = pct >= 0 ? 'var(--color-accent)' : '#ef5350';
+                        $('homePriceTrend').textContent = (pct >= 0 ? '+' : '') + pct + '%';
+                        $('homePriceTrend').style.color = color;
+                        $('homePriceTrendSub').textContent = 'Case-Shiller Index, 12-month change';
+
+                        // Auto-fill appreciation rate
+                        if (!$('appreciationRate').value) {
+                            $('appreciationRate').value = Math.max(0, pct).toFixed(1);
+                            $('appreciationHint').textContent = `Auto-filled from Case-Shiller (${pct >= 0 ? '+' : ''}${pct}% last 12 mo)`;
+                            calculate();
+                        }
+                    }
+                } else {
+                    $('homePriceTrend').textContent = 'N/A';
+                    $('homePriceTrendSub').textContent = 'Unable to load';
+                    if (!$('appreciationRate').value) {
+                        $('appreciationRate').value = '3.5';
+                        $('appreciationRate').placeholder = '3.5';
+                    }
+                }
+            } catch (error) {
+                console.error('Failed to fetch home prices:', error);
+                $('homePriceTrend').textContent = 'N/A';
+                $('homePriceTrendSub').textContent = 'Unable to load';
+                if (!$('appreciationRate').value) {
+                    $('appreciationRate').value = '3.5';
+                }
+            }
+        }
+
+        // ===== Fetch Affordability Index =====
+        async function fetchAffordability() {
+            try {
+                const response = await fetch('/api/affordability');
+                if (response.ok) {
+                    const data = await response.json();
+                    const idx = parseFloat(data.index);
+                    $('affordIndex').textContent = data.index;
+                    $('affordInterpretation').textContent = data.interpretation + ' (as of ' + data.date + ')';
+
+                    if (idx >= 130) {
+                        $('affordIndex').style.color = 'var(--color-accent)';
+                    } else if (idx >= 100) {
+                        $('affordIndex').style.color = 'var(--color-warning)';
+                    } else {
+                        $('affordIndex').style.color = '#ef5350';
+                    }
+
+                    let plain = '';
+                    if (idx >= 150) {
+                        plain = `A typical family earns ${Math.round(idx - 100)}% more than needed to afford a median-priced home. This is a very comfortable market for buyers.`;
+                    } else if (idx >= 130) {
+                        plain = `A typical family earns ${Math.round(idx - 100)}% more than needed to afford a median-priced home. This is a fairly healthy market for buyers.`;
+                    } else if (idx >= 110) {
+                        plain = `A typical family earns just ${Math.round(idx - 100)}% more than the minimum needed. The market is tight — there isn't much room in the budget.`;
+                    } else if (idx >= 100) {
+                        plain = `A typical family barely earns enough to qualify for a median-priced home. The market is very tight.`;
+                    } else {
+                        plain = `A typical family does not earn enough to afford a median-priced home. The market is unaffordable for most buyers.`;
+                    }
+
+                    $('affordPlain').textContent = plain;
+                    $('affordExplainer').style.display = '';
+
+                    const pct = Math.max(0, Math.min(100, ((idx - 60) / (160 - 60)) * 100));
+                    $('affordMarker').style.left = pct + '%';
+                    $('affordMarkerLabel').textContent = idx;
+                }
+            } catch (error) {
+                console.error('Failed to fetch affordability index:', error);
+                $('affordIndex').textContent = 'N/A';
+                $('affordInterpretation').textContent = 'Unable to load';
+            }
+        }
+
+        // ===== Email Subscription =====
+        const emailForm = $('emailForm');
+        if (emailForm) {
+            emailForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const emailInput = emailForm.querySelector('input[type="email"]');
+                const submitBtn = emailForm.querySelector('.email-submit');
+                const email = emailInput.value;
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Subscribing...';
+
+                try {
+                    const response = await fetch('/api/subscribe', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email }),
+                    });
+
+                    const data = await response.json();
+                    const toast = $('toast');
+
+                    if (response.ok) {
+                        toast.textContent = 'You\'re subscribed! Check your email to confirm.';
+                        emailForm.reset();
+                    } else {
+                        toast.textContent = data.error || 'Something went wrong. Please try again.';
+                    }
+
+                    toast.classList.add('show');
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        toast.textContent = 'Link copied to clipboard!';
+                    }, 4000);
+                } catch (error) {
+                    const toast = $('toast');
+                    toast.textContent = 'Network error. Please try again.';
+                    toast.classList.add('show');
+                    setTimeout(() => {
+                        toast.classList.remove('show');
+                        toast.textContent = 'Link copied to clipboard!';
+                    }, 4000);
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Subscribe';
+                }
+            });
+        }
+
+        // ===== Resize =====
+        window.addEventListener('resize', () => {
+            if (chartState.yearData.length > 0) {
+                drawChart(chartState.yearData);
+            }
+        });
+
+        // ===== Init =====
+        fetchRates();
+        fetchHomePrices();
+        fetchAffordability();
+    })();
+    </script>
+</body>
+</html>
