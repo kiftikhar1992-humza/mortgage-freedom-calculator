@@ -335,7 +335,6 @@
                         <span>25 yr</span>
                         <span>30 yr</span>
                     </div>
-                    <div class="slider-verdict" id="sliderVerdict"></div>
                 </div>
                 <div class="info-grid-2" style="margin-top: 15px;">
                     <div class="info-item">
@@ -650,30 +649,6 @@
             color: var(--text-heading);
         }
 
-        /* Slider Verdict */
-        .slider-verdict {
-            text-align: center;
-            font-size: 0.95rem;
-            font-weight: 600;
-            padding: 10px 15px;
-            border-radius: var(--radius-lg);
-            margin-top: 12px;
-            line-height: 1.4;
-            display: none;
-        }
-        .slider-verdict.buy-wins {
-            display: block;
-            background: rgba(var(--color-accent-rgb), 0.1);
-            color: var(--color-accent);
-            border: 1px solid rgba(var(--color-accent-rgb), 0.2);
-        }
-        .slider-verdict.rent-wins {
-            display: block;
-            background: rgba(255, 152, 0, 0.1);
-            color: #ff9800;
-            border: 1px solid rgba(255, 152, 0, 0.2);
-        }
-
         /* Verdict Headline */
         .verdict-headline {
             text-align: center;
@@ -845,8 +820,6 @@
                 $('tableCard').style.display = 'none';
                 $('ctaAffordability').style.display = 'none';
                 $('ctaPayoff').style.display = 'none';
-                $('sliderVerdict').className = 'slider-verdict';
-                $('sliderVerdict').textContent = '';
                 return;
             }
 
@@ -999,20 +972,6 @@
             } else {
                 headline.textContent = `Renting is cheaper over ${horizon} years`;
                 headline.className = 'verdict-headline rent-wins';
-            }
-
-            // Update slider verdict
-            const sv = $('sliderVerdict');
-            if (buyWins) {
-                if (breakEvenYear > 0) {
-                    sv.textContent = `Over ${horizon} years, buying saves you ${formatCurrency(savings)} (break even at year ${breakEvenYear})`;
-                } else {
-                    sv.textContent = `Over ${horizon} years, buying saves you ${formatCurrency(savings)}`;
-                }
-                sv.className = 'slider-verdict buy-wins';
-            } else {
-                sv.textContent = `Over ${horizon} years, renting saves you ${formatCurrency(savings)}`;
-                sv.className = 'slider-verdict rent-wins';
             }
 
             $('totalRentCost').textContent = formatCurrency(finalRentCost);
