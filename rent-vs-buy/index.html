@@ -144,7 +144,7 @@
     <main class="container">
         <!-- Hero Section -->
         <section class="hero">
-            <h1 class="hero-title">Should You <span>Rent or Buy</span>?</h1>
+            <h1 class="hero-title">Should I <span>Rent or Buy</span>?</h1>
             <p class="hero-subtitle">Compare the true cost of renting vs buying a home. See your break-even year, equity built, and which option saves you more money.</p>
             <a href="#calculator" class="hero-cta">
                 Compare Now
@@ -216,7 +216,7 @@
                     <div class="info-item">
                         <div class="info-label">Annual Rent Increase</div>
                         <div class="input-row">
-                            <input type="text" class="info-input" id="rentIncrease" value="3" placeholder="3">
+                            <input type="text" class="info-input" id="rentIncrease" value="" placeholder="e.g. 3">
                             <span class="input-prefix">%</span>
                         </div>
                         <div class="input-hint">Typical: 3-5% per year</div>
@@ -225,7 +225,7 @@
                         <div class="info-label">Renter's Insurance</div>
                         <div class="input-row">
                             <span class="input-prefix">$</span>
-                            <input type="text" class="info-input" id="rentersInsurance" value="30" placeholder="30">
+                            <input type="text" class="info-input" id="rentersInsurance" value="" placeholder="e.g. 30">
                         </div>
                         <div class="input-hint">Per month</div>
                     </div>
@@ -253,7 +253,7 @@
                         </div>
                         <div class="input-row">
                             <span class="input-prefix" id="dpPrefix"></span>
-                            <input type="text" class="info-input" id="downPayment" value="20" placeholder="20">
+                            <input type="text" class="info-input" id="downPayment" value="" placeholder="e.g. 20">
                         </div>
                         <div class="input-hint" id="dpHint">Percentage of home price</div>
                     </div>
@@ -317,11 +317,10 @@
             </div>
         </div>
 
-        <!-- Assumptions Card -->
+        <!-- Time Horizon Card -->
         <div class="card">
-            <h2>Assumptions</h2>
+            <h2>Time Horizon</h2>
             <div class="form-section">
-                <div class="section-label optional">Adjust to fit your scenario</div>
                 <div class="slider-container">
                     <div class="slider-header">
                         <span class="slider-label">Time horizon:</span>
@@ -336,6 +335,7 @@
                         <span>25 yr</span>
                         <span>30 yr</span>
                     </div>
+                    <div class="slider-verdict" id="sliderVerdict"></div>
                 </div>
                 <div class="info-grid-2" style="margin-top: 15px;">
                     <div class="info-item">
@@ -650,6 +650,30 @@
             color: var(--text-heading);
         }
 
+        /* Slider Verdict */
+        .slider-verdict {
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: var(--radius-lg);
+            margin-top: 12px;
+            line-height: 1.4;
+            display: none;
+        }
+        .slider-verdict.buy-wins {
+            display: block;
+            background: rgba(var(--color-accent-rgb), 0.1);
+            color: var(--color-accent);
+            border: 1px solid rgba(var(--color-accent-rgb), 0.2);
+        }
+        .slider-verdict.rent-wins {
+            display: block;
+            background: rgba(255, 152, 0, 0.1);
+            color: #ff9800;
+            border: 1px solid rgba(255, 152, 0, 0.2);
+        }
+
         /* Verdict Headline */
         .verdict-headline {
             text-align: center;
@@ -821,6 +845,8 @@
                 $('tableCard').style.display = 'none';
                 $('ctaAffordability').style.display = 'none';
                 $('ctaPayoff').style.display = 'none';
+                $('sliderVerdict').className = 'slider-verdict';
+                $('sliderVerdict').textContent = '';
                 return;
             }
 
@@ -973,6 +999,20 @@
             } else {
                 headline.textContent = `Renting is cheaper over ${horizon} years`;
                 headline.className = 'verdict-headline rent-wins';
+            }
+
+            // Update slider verdict
+            const sv = $('sliderVerdict');
+            if (buyWins) {
+                if (breakEvenYear > 0) {
+                    sv.textContent = `Over ${horizon} years, buying saves you ${formatCurrency(savings)} (break even at year ${breakEvenYear})`;
+                } else {
+                    sv.textContent = `Over ${horizon} years, buying saves you ${formatCurrency(savings)}`;
+                }
+                sv.className = 'slider-verdict buy-wins';
+            } else {
+                sv.textContent = `Over ${horizon} years, renting saves you ${formatCurrency(savings)}`;
+                sv.className = 'slider-verdict rent-wins';
             }
 
             $('totalRentCost').textContent = formatCurrency(finalRentCost);
