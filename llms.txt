@@ -62,6 +62,10 @@ Mortgage Freedom Calculator is a free, no-signup-required web tool that shows ho
 - URL: https://mortgagefreedomcalculator.com/blog/how-much-house-can-i-afford/
 - Description: How the affordability squeeze affects homebuyers in 2026. Shows what Americans can afford salary by salary at current rates, explains the 28/36 rule, the wage vs home price gap, and how to calculate your real number.
 
+### Editorial Standards
+- URL: https://mortgagefreedomcalculator.com/editorial-standards/
+- Description: How content is researched, fact-checked, and maintained. Includes data sources (FRED, Case-Shiller, CFPB, BLS), author credentials, and editorial principles.
+
 ## Data Sources
 - Mortgage rate data: Federal Reserve Economic Data (FRED) — updated weekly
 - 30-Year Fixed Rate: FRED Series MORTGAGE30US

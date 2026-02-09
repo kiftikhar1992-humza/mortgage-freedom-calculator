@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial Standards | Mortgage Freedom Calculator</title>
+    <meta name="description" content="How we research, fact-check, and maintain accuracy across all content on Mortgage Freedom Calculator. Our data sources, editorial process, and commitment to unbiased mortgage education.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mortgagefreedomcalculator.com/editorial-standards/">
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/og-image.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Editorial Standards | Mortgage Freedom Calculator">
+    <meta property="og:description" content="How we research, fact-check, and maintain accuracy across all content.">
+    <meta property="og:url" content="https://mortgagefreedomcalculator.com/editorial-standards/">
+    <meta property="og:image" content="https://mortgagefreedomcalculator.com/og-image.png">
+    <meta property="og:site_name" content="Mortgage Freedom Calculator">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        article {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            color: #4fc3f7;
+            margin-bottom: 10px;
+            font-size: 2rem;
+            line-height: 1.3;
+        }
+        .subtitle {
+            color: #888;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .content {
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .content h2 {
+            color: #fff;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        .content h3 {
+            color: #4fc3f7;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .content p {
+            margin-bottom: 20px;
+        }
+        .content ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        .content li {
+            margin-bottom: 10px;
+        }
+        .content a {
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+        .content a:hover {
+            text-decoration: underline;
+        }
+        .source-card {
+            background: rgba(79, 195, 247, 0.08);
+            border: 1px solid rgba(79, 195, 247, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .source-card h4 {
+            color: #4fc3f7;
+            margin-bottom: 6px;
+            font-size: 1rem;
+        }
+        .source-card p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .principle {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .principle .icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .principle h4 {
+            color: #fff;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+        .principle p {
+            color: #999;
+            font-size: 0.85rem;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+        .author-section {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: rgba(79, 195, 247, 0.05);
+            border: 1px solid rgba(79, 195, 247, 0.15);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .author-section .author-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            flex-shrink: 0;
+        }
+        .author-section .author-info h4 {
+            color: #fff;
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .author-section .author-info p {
+            color: #999;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        .contact-box {
+            background: rgba(102, 187, 106, 0.1);
+            border: 1px solid rgba(102, 187, 106, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .contact-box h3 {
+            color: #66bb6a;
+            margin-bottom: 8px;
+        }
+        .contact-box p {
+            color: #aaa;
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body class="has-header">
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/" class="site-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Mortgage <span>Freedom</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Mortgage Payoff</a></li>
+                    <li><a href="/affordability/">Affordability</a></li>
+                    <li><a href="/rent-vs-buy/">Rent vs Buy</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <article>
+            <h1>Editorial Standards</h1>
+            <p class="subtitle">How we research, verify, and maintain accuracy across everything we publish.</p>
+
+            <div class="content">
+
+                <p>
+                    At Mortgage Freedom Calculator, every article, calculator, and data point exists to help you make informed decisions about the biggest purchase of your life. We take that responsibility seriously. This page explains how our content is created, what sources we rely on, and the standards we hold ourselves to.
+                </p>
+
+                <h2>Our Principles</h2>
+
+                <div class="principles-grid">
+                    <div class="principle">
+                        <div class="icon">&#9989;</div>
+                        <h4>Data-Backed</h4>
+                        <p>Every claim is supported by verifiable data from government and institutional sources.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="icon">&#128200;</div>
+                        <h4>Current</h4>
+                        <p>Mortgage rates, home prices, and market data are updated regularly from live sources.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="icon">&#9878;</div>
+                        <h4>Unbiased</h4>
+                        <p>We are not a lender or broker. Our content is educational, not a sales pitch.</p>
+                    </div>
+                    <div class="principle">
+                        <div class="icon">&#128101;</div>
+                        <h4>For Real People</h4>
+                        <p>Written for everyday Americans, not finance professionals. Clear language, no jargon.</p>
+                    </div>
+                </div>
+
+                <h2>Who Writes Our Content</h2>
+
+                <div class="author-section">
+                    <div class="author-avatar">AA</div>
+                    <div class="author-info">
+                        <h4>Adam Abrahim &mdash; Creator &amp; Author</h4>
+                        <p>Adam has spent over 20 years working in the mortgage industry. He bought his first home at 25 and has watched the path to homeownership change dramatically over two decades. He follows mortgage rates, treasury yields, housing data, and Federal Reserve policy closely. Every article on this site is written by Adam and reflects his firsthand industry knowledge combined with publicly available data.</p>
+                    </div>
+                </div>
+
+                <h2>Our Data Sources</h2>
+
+                <p>
+                    We do not guess. Every statistic, rate, and figure referenced in our content comes from one of the following authoritative sources:
+                </p>
+
+                <div class="source-card">
+                    <h4>Federal Reserve Economic Data (FRED)</h4>
+                    <p>Our mortgage rate data comes directly from the Federal Reserve Bank of St. Louis. The 30-year fixed rate (MORTGAGE30US) and 15-year fixed rate (MORTGAGE15US) are pulled from FRED and updated weekly. Our calculators display these rates in real time.</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>S&P CoreLogic Case-Shiller Home Price Index</h4>
+                    <p>Home price appreciation data used in our Rent vs Buy calculator and blog content is sourced from the Case-Shiller U.S. National Home Price Index, the industry standard for tracking residential real estate values.</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>Consumer Financial Protection Bureau (CFPB)</h4>
+                    <p>We reference CFPB guidance on mortgage prepayment rules, how mortgage interest is calculated, and consumer protection information. The CFPB is the federal agency responsible for consumer financial protection.</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>Freddie Mac &amp; Fannie Mae</h4>
+                    <p>Government-sponsored enterprise data on mortgage origination trends, borrower profiles, and housing market conditions informs our affordability analysis and market commentary.</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>National Association of Realtors (NAR)</h4>
+                    <p>Homebuyer demographics, including median age of first-time buyers, median home prices, and market activity data referenced in our blog posts.</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>Bureau of Labor Statistics (BLS)</h4>
+                    <p>Consumer Price Index (CPI) data for inflation comparisons, wage growth statistics, and cost-of-living figures used in our affordability content.</p>
+                </div>
+
+                <h2>Our Fact-Checking Process</h2>
+
+                <p>
+                    Before any article is published on Mortgage Freedom Calculator:
+                </p>
+
+                <ul>
+                    <li><strong>Data verification:</strong> Every statistic is traced back to its original source. We link to primary sources whenever possible so readers can verify the data themselves.</li>
+                    <li><strong>Calculator accuracy:</strong> Our calculators use standard mortgage amortization formulas (PMT function) and are tested against known scenarios to ensure accuracy. Rate data is pulled directly from the Federal Reserve API.</li>
+                    <li><strong>Examples are realistic:</strong> When we use example scenarios (a $400,000 home at 6.2%, for instance), the numbers reflect real market conditions at the time of writing, not hypothetical best cases.</li>
+                    <li><strong>No misleading claims:</strong> We do not promise savings, guarantee outcomes, or present opinions as facts. When we share a perspective, we make clear that it is based on analysis, not certainty.</li>
+                    <li><strong>Regular updates:</strong> Articles that reference current rates or market conditions are reviewed and updated as conditions change. Each article displays its publication date so readers know when it was written.</li>
+                </ul>
+
+                <h2>What We Are Not</h2>
+
+                <p>
+                    Transparency matters. Here is what Mortgage Freedom Calculator is not:
+                </p>
+
+                <ul>
+                    <li><strong>We are not a lender.</strong> We do not originate, broker, or service mortgage loans.</li>
+                    <li><strong>We are not financial advisors.</strong> Our content is educational. It is not personalized financial advice. Your situation is unique, and major financial decisions should involve a qualified professional.</li>
+                    <li><strong>We do not accept payment for editorial content.</strong> No lender, broker, or company can pay to influence what we write or how our calculators work.</li>
+                </ul>
+
+                <div class="contact-box">
+                    <h3>See Something Wrong?</h3>
+                    <p>If you find an error, outdated statistic, or anything that does not look right, please let us know at <a href="mailto:contact@mortgagefreedomcalculator.com" style="color: #66bb6a;">contact@mortgagefreedomcalculator.com</a>. We take accuracy seriously and will correct verified errors promptly.</p>
+                </div>
+
+            </div>
+        </article>
+
+        <footer>
+            <p>&copy; 2026 Mortgage Freedom Calculator. All rights reserved.</p>
+        </footer>
+    </main>
+</body>
+</html>
