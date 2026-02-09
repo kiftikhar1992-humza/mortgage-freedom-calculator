@@ -50,6 +50,18 @@ Mortgage Freedom Calculator is a free, no-signup-required web tool that shows ho
 - URL: https://mortgagefreedomcalculator.com/blog/how-much-save-paying-early/
 - Description: Real examples showing potential interest savings from paying off a mortgage 5, 10, or 15 years early.
 
+### Bi-Weekly vs. Lump Sum Extra Payments
+- URL: https://mortgagefreedomcalculator.com/blog/biweekly-vs-lump-sum-extra-payment/
+- Description: Compares bi-weekly payments, annual lump sums, and monthly extra payments. Explains how mortgage interest is calculated and which strategy saves the most money.
+
+### Should I Rent or Buy a Home?
+- URL: https://mortgagefreedomcalculator.com/blog/should-i-rent-or-buy/
+- Description: The real math behind the rent vs buy decision. Covers hidden costs of buying, opportunity cost of a down payment, when renting wins, when buying wins, and how to find your break-even year.
+
+### Everything Costs More. Can You Still Afford a Home?
+- URL: https://mortgagefreedomcalculator.com/blog/how-much-house-can-i-afford/
+- Description: How the affordability squeeze affects homebuyers in 2026. Shows what Americans can afford salary by salary at current rates, explains the 28/36 rule, the wage vs home price gap, and how to calculate your real number.
+
 ## Data Sources
 - Mortgage rate data: Federal Reserve Economic Data (FRED) — updated weekly
 - 30-Year Fixed Rate: FRED Series MORTGAGE30US
