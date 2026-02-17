@@ -1,6 +1,6 @@
 import { CacheService } from '../_shared/services/cache.js';
 import { FREDService } from '../_shared/services/fred.js';
-import { ClaudeService } from '../_shared/services/claude.js';
+import { WorkersAIService } from '../_shared/services/workers-ai.js';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -41,9 +41,9 @@ export async function onRequest(context) {
 
     const cacheService = new CacheService(env.FRED_CACHE);
     const fredService = new FREDService(env.FRED_API_KEY, cacheService);
-    const claudeService = new ClaudeService(env.ANTHROPIC_API_KEY, fredService);
+    const aiService = new WorkersAIService(env.AI, fredService);
 
-    const result = await claudeService.chat(body.message, history);
+    const result = await aiService.chat(body.message, history);
 
     return Response.json({
       response: result.response,

@@ -7,6 +7,10 @@ pages_build_output_dir = "./"
 binding = "FRED_CACHE"
 id = "1a2c4e28fa434f7c986073921174423a"
 
+# Workers AI binding
+[ai]
+binding = "AI"
+
 # Environment variables (secrets set via dashboard or wrangler)
 # npx wrangler pages secret put FRED_API_KEY
 # npx wrangler pages secret put ANTHROPIC_API_KEY
