@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avoid Being House Poor: What % of Take-Home Pay Should Your Mortgage Be? | Mortgage Freedom Calculator</title>
+    <meta name="description" content="The 28% rule sounds simple — but it's based on gross income, not what you actually take home. Here's how to calculate PITI as a share of your real paycheck and avoid becoming house poor.">
+    <meta name="keywords" content="avoid being house poor, what percentage of income for mortgage, PITI take home pay, how much mortgage can I afford, house poor calculator, 28 36 rule mortgage, mortgage income rule, first time homebuyer affordability">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mortgagefreedomcalculator.com/blog/avoid-being-house-poor/">
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/og-image.png">
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Mortgage Freedom Calculator Blog" href="/blog/feed.xml">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Avoid Being House Poor: What % of Take-Home Pay Should Your Mortgage Be?">
+    <meta property="og:description" content="The 28% rule is based on gross income — not what you actually bring home. Here's how to calculate PITI the right way and make sure your mortgage doesn't consume your life.">
+    <meta property="og:url" content="https://mortgagefreedomcalculator.com/blog/avoid-being-house-poor/">
+    <meta property="og:image" content="https://mortgagefreedomcalculator.com/og-image.png">
+    <meta property="og:site_name" content="Mortgage Freedom Calculator">
+    <meta property="og:locale" content="en_US">
+    <meta property="article:published_time" content="2026-03-22T00:00:00Z">
+    <meta property="article:modified_time" content="2026-03-22T00:00:00Z">
+    <meta property="article:author" content="Adam Abrahim">
+    <meta property="article:section" content="Mortgage Strategy">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Avoid Being House Poor: What % of Take-Home Pay Should Your Mortgage Be?">
+    <meta name="twitter:description" content="The 28% rule is based on gross income — not what you bring home. Here's how to calculate PITI the right way and avoid becoming house poor.">
+    <meta name="twitter:image" content="https://mortgagefreedomcalculator.com/og-image.png">
+
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Avoid Being House Poor: What % of Take-Home Pay Should Your Mortgage Be?",
+        "description": "The 28% rule sounds simple — but it's based on gross income, not what you actually take home. Here's how to calculate PITI as a share of your real paycheck and avoid becoming house poor.",
+        "datePublished": "2026-03-22",
+        "dateModified": "2026-03-22",
+        "author": {
+            "@type": "Person",
+            "name": "Adam Abrahim",
+            "url": "https://mortgagefreedomcalculator.com/blog/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Mortgage Freedom Calculator",
+            "url": "https://mortgagefreedomcalculator.com"
+        }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mortgagefreedomcalculator.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mortgagefreedomcalculator.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Avoid Being House Poor" }
+        ]
+    }
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            color: #4fc3f7;
+            text-decoration: none;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { text-decoration: underline; }
+        article {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            color: #4fc3f7;
+            margin-bottom: 15px;
+            font-size: 2rem;
+            line-height: 1.3;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .content { line-height: 1.8; color: #ccc; }
+        .content h2 {
+            color: #fff;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        .content h3 {
+            color: #e0e0e0;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .content p { margin-bottom: 20px; }
+        .content ul, .content ol {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        .content li { margin-bottom: 10px; }
+        .content a { color: #4fc3f7; text-decoration: none; }
+        .content a:hover { text-decoration: underline; }
+        .content em { color: #aaa; }
+        .highlight-box {
+            background: rgba(79, 195, 247, 0.1);
+            border-left: 4px solid #4fc3f7;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .highlight-box strong { color: #4fc3f7; }
+        .warning-box {
+            background: rgba(239, 83, 80, 0.08);
+            border-left: 4px solid #ef5350;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .warning-box strong { color: #ef5350; }
+        .success-box {
+            background: rgba(102, 187, 106, 0.08);
+            border-left: 4px solid #66bb6a;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .success-box strong { color: #66bb6a; }
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .stat-box {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-box .stat-value {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #4fc3f7;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .stat-box .stat-label {
+            font-size: 0.82rem;
+            color: #888;
+            line-height: 1.4;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .comparison-table th { color: #4fc3f7; font-weight: 600; }
+        .comparison-table td { color: #aaa; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table td.good { color: #66bb6a; font-weight: 600; }
+        .comparison-table td.warn { color: #ffa726; font-weight: 600; }
+        .comparison-table td.bad { color: #ef5350; font-weight: 600; }
+        .calc-block {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        .calc-block h3 {
+            color: #4fc3f7;
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+        }
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 9px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.95rem;
+        }
+        .calc-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            padding-top: 14px;
+            margin-top: 4px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+        .calc-row .label { color: #aaa; }
+        .calc-row .value { color: #4fc3f7; }
+        .calc-row:last-child .value { color: #66bb6a; font-size: 1.05rem; }
+        .calc-row.danger .value { color: #ef5350; }
+        .piti-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 25px 0;
+        }
+        .piti-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 18px;
+        }
+        .piti-card .piti-letter {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #4fc3f7;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .piti-card .piti-word {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .piti-card p {
+            font-size: 0.88rem;
+            color: #aaa;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+        .sources {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .sources h3 {
+            color: #888;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        .sources ol { padding-left: 20px; }
+        .sources li {
+            color: #777;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+            line-height: 1.5;
+        }
+        .sources a { color: #4fc3f7; text-decoration: none; }
+        .sources a:hover { text-decoration: underline; }
+        .cta-banner {
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.15) 0%, rgba(79, 195, 247, 0.05) 100%);
+            border: 1px solid rgba(79, 195, 247, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .cta-banner h3 { color: #4fc3f7; margin-bottom: 10px; }
+        .cta-banner p { color: #aaa; margin-bottom: 20px; }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+            color: #1a1a2e;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(79, 195, 247, 0.3);
+        }
+        .fact-checked {
+            color: #66bb6a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .fact-checked svg { vertical-align: middle; margin-right: 3px; }
+        .author-bio {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: rgba(79, 195, 247, 0.05);
+            border: 1px solid rgba(79, 195, 247, 0.15);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+        .author-bio .author-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            flex-shrink: 0;
+        }
+        .author-bio .author-info h4 { color: #fff; font-size: 1rem; margin-bottom: 8px; }
+        .author-bio .author-info p {
+            color: #999;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        .related-posts {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .related-posts h3 {
+            color: #888;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        .related-posts a {
+            display: block;
+            color: #4fc3f7;
+            text-decoration: none;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .related-posts a:hover { color: #fff; }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: #666;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 600px) {
+            article { padding: 25px 18px; }
+            h1 { font-size: 1.5rem; }
+            .stat-grid, .piti-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body class="has-header">
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/" class="site-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Mortgage <span>Freedom</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/">Mortgage Payoff</a></li>
+                    <li><a href="/affordability/">Affordability</a></li>
+                    <li><a href="/rent-vs-buy/">Rent vs Buy</a></li>
+                    <li><a href="/blog/" class="active">Blog</a></li>
+                    <li><a href="/#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="../" class="back-link">&larr; Back to Blog</a>
+
+        <article>
+            <h1>Avoid Being House Poor: What Percentage of Your Take-Home Pay Should Your Mortgage Be?</h1>
+            <div class="meta">By Adam Abrahim &bull; March 22, 2026 &bull; 10 min read &bull; <a href="/editorial-standards/" class="fact-checked"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>Fact-checked</a></div>
+
+            <div class="content">
+                <p>
+                    Being house poor is one of the most common financial traps in homeownership — and most people don't realize they've fallen into it until it's too late. You buy the home, you close, you move in, and then you notice that after the mortgage, property taxes, insurance, and utilities, there's almost nothing left. No savings. No vacations. No breathing room. Every paycheck is spoken for before it arrives.
+                </p>
+                <p>
+                    The U.S. Census Bureau reported that the real median household income in 2024 was <strong>$83,730</strong>. At today's home prices and a 6% mortgage rate, a median-income family buying a median-priced home is right at the edge of what's financially sustainable — and that's before accounting for taxes, insurance, and the other costs lenders don't include in their approval calculations.
+                </p>
+                <p>
+                    This guide walks you through exactly how to calculate what your housing costs will actually be as a percentage of your real take-home pay — not your gross income — and how to set a limit that keeps you financially free after you buy.
+                </p>
+
+                <h2>What Does "House Poor" Actually Mean?</h2>
+                <p>
+                    House poor describes a situation where your home consumes so much of your income that you can't comfortably afford everything else: retirement savings, emergency fund, car maintenance, kids' activities, a dinner out. You own an asset, but the asset owns your budget.
+                </p>
+                <p>
+                    It happens for a predictable reason: buyers focus on what the lender will approve them for, not on what they can sustainably afford. Lenders use different math than your actual life requires. Understanding the gap between those two numbers is the most important thing you can do before you make an offer.
+                </p>
+
+                <div class="stat-grid">
+                    <div class="stat-box">
+                        <span class="stat-value">$83,730</span>
+                        <span class="stat-label">Real Median U.S. Household<br>Income (2024, U.S. Census)</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">~$398K</span>
+                        <span class="stat-label">Median Home Sale Price<br>Feb 2026 (NAR)</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">30%+</span>
+                        <span class="stat-label">Of gross income = HUD's<br>"cost-burdened" threshold</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">43%</span>
+                        <span class="stat-label">Max DTI most lenders<br>will approve (CFPB)</span>
+                    </div>
+                </div>
+
+                <h2>First: What Is PITI?</h2>
+                <p>
+                    When people talk about a mortgage payment, they often mean just principal and interest — the amount that goes to the bank each month. But your true monthly housing cost is PITI: four components that together represent what homeownership actually costs you every month.
+                </p>
+
+                <div class="piti-grid">
+                    <div class="piti-card">
+                        <div class="piti-letter">P</div>
+                        <div class="piti-word">Principal</div>
+                        <p>The portion of your payment that reduces your loan balance. In the early years of a mortgage, this is a small fraction of your total payment — amortization front-loads interest.</p>
+                    </div>
+                    <div class="piti-card">
+                        <div class="piti-letter">I</div>
+                        <div class="piti-word">Interest</div>
+                        <p>The cost of borrowing. At a 6% rate on a $350,000 loan, you pay roughly $1,750/month in interest in year one alone. This is the largest component early in the loan.</p>
+                    </div>
+                    <div class="piti-card">
+                        <div class="piti-letter">T</div>
+                        <div class="piti-word">Taxes</div>
+                        <p>Property taxes vary widely by location — from under 0.5% of home value annually in some states to over 2% in others. Lenders collect these monthly in escrow. Never ignore this number.</p>
+                    </div>
+                    <div class="piti-card">
+                        <div class="piti-letter">I</div>
+                        <div class="piti-word">Insurance</div>
+                        <p>Homeowners insurance protects the structure. If your down payment is under 20%, add PMI (Private Mortgage Insurance) — typically 0.5%&ndash;1.5% of the loan amount annually until you reach 20% equity.</p>
+                    </div>
+                </div>
+
+                <p>
+                    Your lender will use PITI when calculating your debt-to-income ratio. You should use it too — and then go further.
+                </p>
+
+                <h2>The Rules: What Lenders Use vs. What You Should Use</h2>
+                <p>
+                    There are two commonly used rules for housing affordability, and understanding the difference between them is critical.
+                </p>
+
+                <h3>The 28/36 Rule (What Lenders Use)</h3>
+                <p>
+                    The 28/36 rule is the traditional mortgage industry benchmark:
+                </p>
+                <ul>
+                    <li><strong>Front-end ratio:</strong> Your monthly PITI should not exceed <strong>28% of your gross monthly income</strong> (your income before taxes)</li>
+                    <li><strong>Back-end ratio:</strong> Your total monthly debt payments — including PITI plus car loans, student loans, credit cards — should not exceed <strong>36% of gross income</strong></li>
+                </ul>
+                <p>
+                    This is what most conventional lenders target. The Consumer Financial Protection Bureau notes that lenders generally look for a total debt-to-income ratio of 43% or below, though conventional loan guidelines typically use 36% as the preferred ceiling.
+                </p>
+
+                <div class="warning-box">
+                    <strong>The problem with gross income:</strong> Lenders calculate your ratios on gross income — what you earn before taxes, health insurance, 401(k), and other deductions. But you don't live on gross income. You live on take-home pay. For most households, take-home pay is 20%&ndash;35% less than gross income. A mortgage that is "28% of gross" can easily be 38%&ndash;42% of what you actually deposit in your bank account.
+                </div>
+
+                <h3>The 25% Take-Home Rule (What You Should Use)</h3>
+                <p>
+                    A more conservative and practical guideline: keep your total PITI at or below <strong>25% of your monthly take-home pay</strong>. This means after all taxes, insurance premiums, and retirement contributions are deducted from your paycheck.
+                </p>
+                <p>
+                    This threshold leaves enough room for:
+                </p>
+                <ul>
+                    <li>Emergency fund contributions (3&ndash;6 months of expenses)</li>
+                    <li>Retirement savings beyond any employer match</li>
+                    <li>Home maintenance (more on this shortly)</li>
+                    <li>Other life expenses without constant financial stress</li>
+                </ul>
+                <p>
+                    NAR's Housing Affordability Index similarly uses 25% of income as the qualifying threshold for what a "typical family" can afford — and that's using principal and interest only, before taxes and insurance are added.
+                </p>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>Rule</th>
+                        <th>Income Basis</th>
+                        <th>Max Housing %</th>
+                        <th>Who Uses It</th>
+                    </tr>
+                    <tr>
+                        <td>28/36 Rule</td>
+                        <td>Gross income</td>
+                        <td>28% (PITI)</td>
+                        <td>Mortgage lenders</td>
+                    </tr>
+                    <tr>
+                        <td>HUD Threshold</td>
+                        <td>Gross income</td>
+                        <td>30% (housing costs)</td>
+                        <td>Federal housing policy</td>
+                    </tr>
+                    <tr>
+                        <td>NAR HAI</td>
+                        <td>Gross income</td>
+                        <td>25% (P&amp;I only)</td>
+                        <td>Housing economists</td>
+                    </tr>
+                    <tr>
+                        <td><strong>25% Take-Home Rule</strong></td>
+                        <td><strong>Net (take-home) pay</strong></td>
+                        <td><strong>25% (full PITI)</strong></td>
+                        <td><strong>Your actual budget</strong></td>
+                    </tr>
+                </table>
+
+                <h2>How to Calculate Your Number</h2>
+                <p>
+                    Here's the step-by-step calculation. Work through this with your real numbers before you start house hunting — not after you find a home you love.
+                </p>
+
+                <p><strong>Step 1: Find your true monthly take-home pay.</strong> Look at your actual bank deposit after all deductions. If your income varies, use a 3-month average. Include your partner's income if it's part of the household budget.</p>
+
+                <p><strong>Step 2: Multiply by 25%.</strong> This is your maximum total PITI. If your household takes home $6,000/month, your maximum all-in housing payment is $1,500.</p>
+
+                <p><strong>Step 3: Subtract taxes and insurance to find your P&amp;I budget.</strong> Research property taxes for the area you're buying in (available on county assessor websites). Get homeowners insurance quotes — $150&ndash;$200/month is a reasonable estimate for many markets. If you're putting less than 20% down, add PMI.</p>
+
+                <p><strong>Step 4: Use that P&amp;I number to back into your maximum loan amount.</strong> At 6.11%, a $1,200/month P&amp;I budget supports roughly a $197,000 loan. At $1,500/month P&amp;I, roughly $246,000.</p>
+
+                <h2>A Real-World Example</h2>
+                <p>
+                    Let's run through this with a concrete household — two working adults, combined gross income of $110,000 per year (roughly 31% above the U.S. median).
+                </p>
+
+                <div class="calc-block">
+                    <h3>Household Profile: $110,000 Gross Income</h3>
+                    <div class="calc-row">
+                        <span class="label">Combined gross monthly income</span>
+                        <span class="value">$9,167</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="label">Estimated taxes + deductions (~28%)</span>
+                        <span class="value">&minus; $2,567</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="label">Monthly take-home pay</span>
+                        <span class="value">$6,600</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="label">25% take-home rule → max PITI</span>
+                        <span class="value">$1,650</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="label">Estimated property taxes (1.1% of home value / 12)</span>
+                        <span class="value">&minus; $275</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="label">Homeowners insurance</span>
+                        <span class="value">&minus; $150</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="label">PMI (if &lt; 20% down, ~0.7% of loan / 12)</span>
+                        <span class="value">&minus; $175</span>
+                    </div>
+                    <div class="calc-row">
+                        <span class="label">Available for principal &amp; interest</span>
+                        <span class="value">$1,050</span>
+                    </div>
+                </div>
+
+                <p>
+                    At today's 30-year fixed rate of 6.11%, a monthly P&amp;I payment of $1,050 supports a loan of approximately <strong>$172,000</strong>. With a 10% down payment, that means a purchase price of roughly <strong>$191,000</strong>.
+                </p>
+                <p>
+                    Now compare that to what a lender might approve. Using the 28/36 rule on gross income: 28% of $9,167 = $2,567/month in PITI. That could support a loan of around $380,000 — more than double what the take-home pay rule produces.
+                </p>
+
+                <div class="warning-box">
+                    <strong>This gap is how people become house poor.</strong> The lender approves $380,000. The family buys at $380,000. Then they discover that $2,567/month is nearly 39% of their actual take-home — and there's nothing left for anything else.
+                </div>
+
+                <h2>The Costs Lenders Don't Include (But You Must)</h2>
+                <p>
+                    Even if your PITI is within the 25% threshold, homeownership carries additional costs that renters don't face. Ignoring these is the second way people end up house poor even when their mortgage payment "looks fine."
+                </p>
+
+                <ul>
+                    <li><strong>Maintenance and repairs: 1%&ndash;2% of home value per year.</strong> On a $300,000 home, budget $3,000&ndash;$6,000 annually — roughly $250&ndash;$500/month — for the furnace, roof, plumbing, appliances, and the hundred things that break without warning. Older homes often run higher.</li>
+                    <li><strong>HOA fees.</strong> In condos and many planned communities, HOA fees range from $200 to $800/month or more. These are non-negotiable and frequently increase. Always factor them in before making an offer.</li>
+                    <li><strong>Higher utilities.</strong> A 2,400 sq ft house costs more to heat and cool than an 800 sq ft apartment. Budget $150&ndash;$300/month more than you currently pay.</li>
+                    <li><strong>Landscaping and exterior maintenance.</strong> Lawn care, snow removal, exterior painting, driveway sealing — costs that simply don't exist when you rent.</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <strong>The real number to budget:</strong> Add 1.5% of the home's value per year (a conservative maintenance estimate) to your PITI when stress-testing affordability. On a $300,000 home, that's $375/month on top of your mortgage payment. If both numbers together stay under 30%&ndash;35% of take-home pay, you're in solid shape.
+                </div>
+
+                <h2>Stress-Testing Your Budget: Three Scenarios</h2>
+                <p>
+                    Before you commit to a purchase price, run your numbers through three scenarios. The home that looks affordable in the base case may not survive a realistic stress test.
+                </p>
+
+                <table class="comparison-table">
+                    <tr>
+                        <th>Scenario</th>
+                        <th>PITI</th>
+                        <th>% of $6,600 Take-Home</th>
+                        <th>Assessment</th>
+                    </tr>
+                    <tr>
+                        <td>Conservative purchase ($300K, 20% down)</td>
+                        <td>$1,560</td>
+                        <td class="good">24%</td>
+                        <td class="good">Healthy</td>
+                    </tr>
+                    <tr>
+                        <td>Stretch purchase ($380K, 10% down)</td>
+                        <td>$2,450</td>
+                        <td class="warn">37%</td>
+                        <td class="warn">Risky</td>
+                    </tr>
+                    <tr>
+                        <td>Max lender approval ($420K, 5% down)</td>
+                        <td>$2,850</td>
+                        <td class="bad">43%</td>
+                        <td class="bad">House poor</td>
+                    </tr>
+                </table>
+
+                <p><em>Estimates based on 6.11% 30-year fixed, 1.1% property tax, $150/mo insurance, 0.7% PMI where applicable. Actual costs vary by location.</em></p>
+
+                <h2>What to Do If the Math Doesn't Work Yet</h2>
+                <p>
+                    If you run your numbers and the home you want sits above the 25% threshold, you have five levers to pull — in order of how much control you have over each:
+                </p>
+                <ol>
+                    <li><strong>Buy less house.</strong> The most direct lever. A $50,000 reduction in purchase price saves roughly $295/month at current rates. That can shift you from house poor to financially comfortable.</li>
+                    <li><strong>Increase your down payment.</strong> A larger down payment lowers your loan balance, eliminates or reduces PMI, and shrinks your monthly P&amp;I. Moving from 5% to 20% down on a $350,000 home saves roughly $450/month.</li>
+                    <li><strong>Wait and improve your credit.</strong> A credit score of 760+ can get you rates 0.25%&ndash;0.5% lower than a score of 680. On a $300,000 loan, that's $50&ndash;$90/month — not transformative, but meaningful.</li>
+                    <li><strong>Increase income before buying.</strong> Every $10,000 increase in household income adds roughly $175/month in take-home pay (after taxes) — which means more room for housing without hitting the 25% ceiling.</li>
+                    <li><strong>Buy in a lower-tax area.</strong> Property taxes vary enormously by county. The same $350,000 home might cost $200/month in taxes in one county and $600/month in another. This is often overlooked.</li>
+                </ol>
+
+                <h2>The Honest Conversation About What You Can Afford</h2>
+                <p>
+                    Lenders are in the business of making loans. They will approve you for as much as the guidelines allow, and the guidelines allow a lot more than most households can comfortably sustain. Getting pre-approved for $450,000 doesn't mean buying at $450,000 is a good idea — it means the lender has determined you can make the payments without defaulting. That's a much lower bar than "you will be financially comfortable and able to build wealth."
+                </p>
+                <p>
+                    The buyers who avoid being house poor share one trait: they set their own limit before talking to a lender. They calculate their take-home PITI threshold first, then shop for homes that fit inside it — rather than falling in love with a home and trying to make the math work around it.
+                </p>
+
+                <div class="success-box">
+                    <strong>The 25% rule in one sentence:</strong> If your full PITI — principal, interest, taxes, and insurance — costs more than 25% of your monthly take-home pay, be very cautious. If it costs more than 30%, you are buying more house than your income can comfortably support.
+                </div>
+
+                <h2>The Bottom Line</h2>
+                <p>
+                    The math on homeownership is simpler than the mortgage industry makes it seem. Start with what hits your bank account every month. Multiply by 25%. That is your maximum all-in housing payment — full stop.
+                </p>
+                <p>
+                    Everything else — the lender's pre-approval letter, the 28% gross income rule, the "you can always refinance later" logic — is noise designed to get you to buy more house. Your number is what you take home, not what you earn on paper.
+                </p>
+                <p>
+                    Once you own the home, the best way to reduce the long-term cost of the mortgage and build equity faster is through extra payments. Even $100&ndash;$200 extra per month against principal can cut years off your loan and save tens of thousands in interest. Use our <a href="/">mortgage payoff calculator</a> to see exactly what your payoff timeline looks like — and how small extra payments change it.
+                </p>
+
+                <div class="sources">
+                    <h3>Sources</h3>
+                    <ol>
+                        <li>U.S. Census Bureau via Federal Reserve Economic Data (FRED), <a href="https://fred.stlouisfed.org/series/MEHOINUSA672N" target="_blank" rel="noopener">Real Median Household Income in the United States</a> &mdash; $83,730 (2024, updated Sept. 2025)</li>
+                        <li>National Association of Realtors, <a href="https://www.nar.realtor/research-and-statistics/housing-statistics/existing-home-sales" target="_blank" rel="noopener">Existing-Home Sales Report</a> &mdash; Median sale price February 2026</li>
+                        <li>National Association of Realtors, <a href="https://www.nar.realtor/research-and-statistics/housing-statistics/housing-affordability-index" target="_blank" rel="noopener">Housing Affordability Index</a> &mdash; 25% of income qualifying threshold methodology</li>
+                        <li>Consumer Financial Protection Bureau, <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-a-debt-to-income-ratio-why-is-the-43-debt-to-income-ratio-important-en-1791/" target="_blank" rel="noopener">"What Is a Debt-to-Income Ratio?"</a> &mdash; DTI definition and lender standards</li>
+                        <li>U.S. Department of Housing and Urban Development (HUD), <a href="https://www.huduser.gov/portal/datasets/cp.html" target="_blank" rel="noopener">Comprehensive Housing Affordability Strategy Data</a> &mdash; 30% of gross income cost-burden threshold</li>
+                        <li>Freddie Mac, <a href="https://www.freddiemac.com/pmms" target="_blank" rel="noopener">Primary Mortgage Market Survey</a> &mdash; 6.11% 30-year fixed rate as of March 12, 2026</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="cta-banner">
+                <h3>See What Your Payoff Timeline Really Looks Like</h3>
+                <p>Already bought? Extra payments are the fastest way to reduce housing costs over time. See how much sooner you could be mortgage-free.</p>
+                <a href="/" class="cta-btn">Try the Mortgage Payoff Calculator</a>
+            </div>
+
+            <div class="author-bio">
+                <div class="author-avatar">AA</div>
+                <div class="author-info">
+                    <h4>Written by Adam Abrahim</h4>
+                    <p>I bought my first home at 25, back when that was still a normal thing to do. Today, the median age of a first-time homebuyer has reached 40. Over the past 20 years working in the mortgage industry, I've watched the path to homeownership get harder for millions of Americans. Home prices have doubled, rates have swung wildly, and the financial literacy gap has only grown wider. I follow the markets, treasury yields, housing data, Fed policy, not because it's my job, but because I genuinely believe understanding these forces is the difference between feeling stuck and finding a way forward. I built this site to provide powerful tools, helpful mortgage insights, and share what I've learned over two decades to help everyday people like me make confident, informed decisions about the biggest purchase of their lives.</p>
+                </div>
+            </div>
+
+            <div class="related-posts">
+                <h3>Related Articles</h3>
+                <a href="../how-much-house-can-i-afford/">Everything Costs More. Can You Still Afford a Home?</a>
+                <a href="../should-i-rent-or-buy/">Should I Rent or Buy? The Real Math Nobody Shows You</a>
+                <a href="../navigating-volatile-mortgage-rates/">How to Navigate an Up-and-Down Mortgage Rate Market</a>
+            </div>
+        </article>
+
+        <footer>
+            <p>&copy; 2026 Mortgage Freedom Calculator. All rights reserved.</p>
+        </footer>
+    </main>
+</body>
+</html>

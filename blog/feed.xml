@@ -5,13 +5,22 @@
     <link>https://mortgagefreedomcalculator.com/blog/</link>
     <description>Tips and strategies to pay off your mortgage faster, save thousands in interest, and achieve financial freedom.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Mar 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://mortgagefreedomcalculator.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://mortgagefreedomcalculator.com/og-image.png</url>
       <title>Mortgage Freedom Calculator Blog</title>
       <link>https://mortgagefreedomcalculator.com/blog/</link>
     </image>
+
+    <item>
+      <title>Avoid Being House Poor: What % of Take-Home Pay Should Your Mortgage Be?</title>
+      <link>https://mortgagefreedomcalculator.com/blog/avoid-being-house-poor/</link>
+      <guid isPermaLink="true">https://mortgagefreedomcalculator.com/blog/avoid-being-house-poor/</guid>
+      <pubDate>Sun, 22 Mar 2026 00:00:00 GMT</pubDate>
+      <description>Lenders approve you based on gross income — not what you take home. Here's how to calculate PITI the right way, set a limit that protects your lifestyle, and avoid the most common financial trap in homeownership.</description>
+      <category>Mortgage Strategy</category>
+    </item>
 
     <item>
       <title>How to Navigate an Up-and-Down Mortgage Rate Market</title>
