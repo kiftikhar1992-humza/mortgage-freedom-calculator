@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMI Calculator — How Much Is Private Mortgage Insurance? | Mortgage Freedom Calculator</title>
+    <meta name="description" content="Free PMI calculator. See your exact monthly PMI cost, how long you'll pay it, total PMI paid, and when you can cancel it. Includes 20% down comparison.">
+    <meta name="keywords" content="PMI calculator, private mortgage insurance calculator, how much is PMI, when can I cancel PMI, PMI monthly cost, mortgage insurance calculator">
+    <meta name="author" content="Mortgage Freedom Calculator">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mortgagefreedomcalculator.com/pmi-calculator/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PMI Calculator — How Much Is Private Mortgage Insurance?">
+    <meta property="og:description" content="See your exact monthly PMI cost, how long you'll pay it, and when you can cancel it.">
+    <meta property="og:url" content="https://mortgagefreedomcalculator.com/pmi-calculator/">
+    <meta property="og:image" content="https://mortgagefreedomcalculator.com/og-image.png">
+    <meta property="og:site_name" content="Mortgage Freedom Calculator">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PMI Calculator — How Much Is Private Mortgage Insurance?">
+    <meta name="twitter:description" content="See your exact monthly PMI cost, how long you'll pay it, and when you can cancel it.">
+    <meta name="twitter:image" content="https://mortgagefreedomcalculator.com/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/og-image.png">
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/rss+xml" title="Mortgage Freedom Calculator Blog" href="/blog/feed.xml">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/styles/main.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PMI Calculator",
+        "description": "Calculate your monthly PMI cost, total PMI paid, and when you can cancel private mortgage insurance.",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Any",
+        "url": "https://mortgagefreedomcalculator.com/pmi-calculator/",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+            "Monthly PMI cost",
+            "PMI cancellation date",
+            "Total PMI paid",
+            "20% down comparison",
+            "Break-even analysis"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does PMI cost per month?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PMI typically costs between 0.5% and 1.5% of your loan amount per year, divided into monthly payments. On a $300,000 loan, that's roughly $125 to $375 per month. The exact rate depends on your down payment, loan type, credit score, and lender."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When can I cancel PMI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can request PMI cancellation when your loan balance reaches 80% of the original purchase price (20% equity). Under the Homeowners Protection Act, lenders must automatically cancel PMI when your balance reaches 78% of the original value, as long as you're current on payments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is PMI worth it?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "PMI allows you to buy sooner with less than 20% down. Whether it's worth it depends on your market: in an appreciating market, getting in sooner can outweigh PMI costs. In a flat or declining market, waiting to save 20% may be better. Use our calculator to see your total PMI cost and compare it to potential home price appreciation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I avoid PMI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The simplest way is to put 20% or more down. Other options include a piggyback loan (80-10-10), lender-paid PMI (higher rate in exchange for no PMI), or VA loans (no PMI for eligible veterans). FHA loans have their own mortgage insurance premium (MIP) that works differently."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body class="has-header">
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/" class="site-logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Mortgage <span>Freedom</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="/">Mortgage Payoff</a></li>
+                    <li><a href="/affordability/">Affordability</a></li>
+                    <li><a href="/rent-vs-buy/">Rent vs Buy</a></li>
+                    <li><a href="/pmi-calculator/" class="active">PMI</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero -->
+        <section class="hero">
+            <h1 class="hero-title">PMI Calculator: How Much Are You <span>Really</span> Paying?</h1>
+            <p class="hero-subtitle">Enter your loan details to see your exact monthly PMI cost, when you can cancel it, total PMI paid, and whether waiting to put 20% down actually saves you money.</p>
+            <a href="#calculator" class="hero-cta">
+                Calculate PMI
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+            <div class="hero-badges">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Free
+                </div>
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    No signup required
+                </div>
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Cancellation date included
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator -->
+        <section id="calculator">
+
+        <!-- Inputs Card -->
+        <div class="card">
+            <h2>Your Loan Details</h2>
+            <div class="form-section">
+                <div class="section-label">Home & Down Payment</div>
+                <div class="info-grid-2">
+                    <div class="info-item required">
+                        <div class="info-label">Home Price</div>
+                        <div class="input-row">
+                            <span class="input-prefix">$</span>
+                            <input type="text" class="info-input" id="homePrice" placeholder="e.g. 400,000">
+                        </div>
+                    </div>
+                    <div class="info-item required">
+                        <div class="info-label">
+                            Down Payment
+                            <button class="dp-toggle" id="dpToggle" title="Toggle dollar/percent">$</button>
+                        </div>
+                        <div class="input-row">
+                            <span class="input-prefix" id="dpPrefix">$</span>
+                            <input type="text" class="info-input" id="downPayment" placeholder="e.g. 40,000">
+                        </div>
+                        <div class="input-hint" id="dpHint">Must be less than 20% to have PMI</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-section">
+                <div class="section-label">Loan Settings</div>
+                <div class="info-grid-3">
+                    <div class="info-item">
+                        <div class="info-label">Interest Rate</div>
+                        <div class="input-row">
+                            <input type="text" class="info-input" id="interestRate" placeholder="6.46">
+                            <span class="input-prefix">%</span>
+                        </div>
+                        <div class="input-hint">Current avg: 6.46%</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Loan Term</div>
+                        <div class="input-row">
+                            <button class="term-btn active" id="term30" data-term="30">30-Year</button>
+                            <button class="term-btn" id="term15" data-term="15">15-Year</button>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Credit Score</div>
+                        <div class="input-row" style="padding: 0;">
+                            <select class="info-input" id="creditScore" style="background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); color: #e0e0e0; padding: 10px 12px; border-radius: 6px; width: 100%; font-size: 1rem;">
+                                <option value="0.50">760+ (Excellent)</option>
+                                <option value="0.70" selected>720–759 (Good)</option>
+                                <option value="0.85">680–719 (Fair)</option>
+                                <option value="1.05">640–679 (Below Avg)</option>
+                                <option value="1.25">620–639 (Poor)</option>
+                            </select>
+                        </div>
+                        <div class="input-hint">Affects PMI rate</div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top: 10px;">
+                <button class="hero-cta" id="calcBtn" style="display:inline-flex; font-size:1rem; padding: 14px 40px;">
+                    Calculate
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:8px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Results Card -->
+        <div class="card" id="resultsCard" style="display:none;">
+            <h2>Your PMI Results</h2>
+
+            <div class="results">
+                <div class="result-box highlight" style="grid-column: 1 / -1;">
+                    <div class="result-label">Monthly PMI Payment</div>
+                    <div class="result-value" id="monthlyPMI" style="font-size: 2.2rem;">--</div>
+                    <div class="result-sub" id="monthlyPMISub">Added to your mortgage payment each month</div>
+                </div>
+                <div class="result-box">
+                    <div class="result-label">Monthly P&I Payment</div>
+                    <div class="result-value" id="monthlyPI">--</div>
+                    <div class="result-sub">Principal & interest</div>
+                </div>
+                <div class="result-box">
+                    <div class="result-label">Total Monthly (P&I + PMI)</div>
+                    <div class="result-value" id="monthlyTotal">--</div>
+                    <div class="result-sub">Before tax & insurance</div>
+                </div>
+                <div class="result-box">
+                    <div class="result-label">PMI Rate Applied</div>
+                    <div class="result-value" id="pmiRate">--</div>
+                    <div class="result-sub">Annual % of loan amount</div>
+                </div>
+                <div class="result-box">
+                    <div class="result-label">Your Down Payment %</div>
+                    <div class="result-value" id="downPct">--</div>
+                    <div class="result-sub">Equity at purchase</div>
+                </div>
+            </div>
+
+            <!-- PMI Cancellation Timeline -->
+            <div style="margin-top: 30px;">
+                <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.15rem;">PMI Cancellation Timeline</h3>
+                <div class="results" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="result-box">
+                        <div class="result-label">Can Request Cancellation</div>
+                        <div class="result-value" id="cancelDate" style="font-size: 1.3rem; color: #66bb6a;">--</div>
+                        <div class="result-sub">When balance hits 80% LTV</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="result-label">Auto-Cancels</div>
+                        <div class="result-value" id="autoDate" style="font-size: 1.3rem; color: #ffb74d;">--</div>
+                        <div class="result-sub">Required by law at 78% LTV</div>
+                    </div>
+                    <div class="result-box">
+                        <div class="result-label">Total PMI Paid</div>
+                        <div class="result-value" id="totalPMI" style="font-size: 1.3rem; color: #ef5350;">--</div>
+                        <div class="result-sub">Until auto-cancellation</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 20% Down Comparison -->
+            <div style="margin-top: 30px;">
+                <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.15rem;">20% Down Comparison</h3>
+                <div id="comparisonBox" style="background: rgba(79,195,247,0.07); border: 1px solid rgba(79,195,247,0.2); border-radius: 10px; padding: 20px;"></div>
+            </div>
+
+            <!-- PMI Progress Bar -->
+            <div style="margin-top: 30px;">
+                <h3 style="color: #fff; margin-bottom: 10px; font-size: 1.15rem;">Equity Progress to PMI Cancellation</h3>
+                <div style="background: rgba(255,255,255,0.07); border-radius: 8px; height: 14px; overflow: hidden; margin-bottom: 8px;">
+                    <div id="equityBar" style="height: 100%; border-radius: 8px; background: linear-gradient(90deg, #4fc3f7, #29b6f6); transition: width 0.6s ease;"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #777;">
+                    <span id="equityNow">Current equity: --%</span>
+                    <span style="color: #66bb6a;">20% = PMI cancelled</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- No PMI Card -->
+        <div class="card" id="noPmiCard" style="display:none;">
+            <div style="text-align:center; padding: 20px 0;">
+                <div style="font-size: 3rem; margin-bottom: 15px;">🎉</div>
+                <h2 style="color: #66bb6a; margin-bottom: 10px;">No PMI Required!</h2>
+                <p style="color: #aaa; max-width: 500px; margin: 0 auto 20px;">Your down payment is 20% or more, so you don't pay PMI. You're saving <strong id="pmiSavings" style="color: #66bb6a;">--</strong>/month compared to a 10% down scenario.</p>
+                <a href="/affordability/" class="hero-cta" style="font-size: 0.95rem; padding: 12px 30px; display: inline-flex;">Check Your Full Affordability</a>
+            </div>
+        </div>
+
+        </section>
+
+        <!-- How PMI Works Section -->
+        <div class="card" style="margin-top: 20px;">
+            <h2>How PMI Works</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                <div style="background: rgba(255,255,255,0.03); border-radius: 8px; padding: 20px; border: 1px solid rgba(255,255,255,0.07);">
+                    <h3 style="color: #4fc3f7; font-size: 1rem; margin-bottom: 10px;">What triggers PMI?</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.7;">PMI is required on conventional loans when your down payment is less than 20% of the purchase price. It protects the lender — not you — if you default.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); border-radius: 8px; padding: 20px; border: 1px solid rgba(255,255,255,0.07);">
+                    <h3 style="color: #4fc3f7; font-size: 1rem; margin-bottom: 10px;">When does it go away?</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.7;">You can request cancellation when your balance reaches 80% of the <em>original</em> purchase price. Lenders must automatically remove it at 78% under federal law (HPA).</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); border-radius: 8px; padding: 20px; border: 1px solid rgba(255,255,255,0.07);">
+                    <h3 style="color: #4fc3f7; font-size: 1rem; margin-bottom: 10px;">What does it cost?</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.7;">Typically 0.5%–1.5% of your loan amount per year. A $350,000 loan at 0.7% PMI = $204/month. Rates vary by credit score, LTV, and lender.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); border-radius: 8px; padding: 20px; border: 1px solid rgba(255,255,255,0.07);">
+                    <h3 style="color: #4fc3f7; font-size: 1rem; margin-bottom: 10px;">How do I avoid it?</h3>
+                    <p style="color: #aaa; font-size: 0.9rem; line-height: 1.7;">Put 20% down, use a piggyback loan (80-10-10), or accept lender-paid PMI (built into a higher rate). VA loans have no PMI at all.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="card" style="text-align:center; margin-top: 20px;">
+            <h2>Ready to See the Full Picture?</h2>
+            <p style="color: #aaa; margin: 15px 0 25px;">PMI is just one piece. See your total monthly payment including taxes, insurance, and how much house you can actually afford.</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="/affordability/" class="hero-cta" style="font-size: 0.95rem; padding: 12px 28px; display: inline-flex;">Affordability Calculator</a>
+                <a href="/blog/pmi-explained/" class="hero-cta" style="font-size: 0.95rem; padding: 12px 28px; display: inline-flex; background: transparent; border: 1px solid rgba(79,195,247,0.4); color: #4fc3f7;">Is PMI Worth It? Read the Guide</a>
+            </div>
+        </div>
+
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #666; font-size: 0.85rem;">
+            <p>&copy; 2026 Mortgage Freedom Calculator. All rights reserved. &bull; <a href="/blog/" style="color: #4fc3f7;">Blog</a></p>
+        </footer>
+    </main>
+
+    <script>
+    // ── Helpers ────────────────────────────────────────────────────────────────
+    const fmt = n => '$' + Math.round(n).toLocaleString();
+    const fmtPct = n => n.toFixed(2) + '%';
+
+    function parseMoney(val) {
+        return parseFloat(val.replace(/[$,%]/g, '').replace(/,/g, '')) || 0;
+    }
+
+    // ── Down payment toggle ($/$%) ─────────────────────────────────────────────
+    let dpMode = '$';
+    document.getElementById('dpToggle').addEventListener('click', () => {
+        dpMode = dpMode === '$' ? '%' : '$';
+        document.getElementById('dpToggle').textContent = dpMode;
+        document.getElementById('dpPrefix').textContent = dpMode === '$' ? '$' : '';
+        document.getElementById('downPayment').placeholder = dpMode === '$' ? 'e.g. 40,000' : 'e.g. 10';
+        document.getElementById('dpHint').textContent = dpMode === '$' ? 'Must be less than 20% to have PMI' : 'Enter % (e.g. 10 for 10%)';
+    });
+
+    // ── Loan term buttons ──────────────────────────────────────────────────────
+    let loanTerm = 30;
+    document.querySelectorAll('.term-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.term-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            loanTerm = parseInt(btn.dataset.term);
+        });
+    });
+
+    // ── Mobile menu ────────────────────────────────────────────────────────────
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+        document.getElementById('navLinks').classList.toggle('open');
+    });
+
+    // ── PMI rate table by credit score & LTV ──────────────────────────────────
+    function getPMIRate(ltv, creditRateBase) {
+        // creditRateBase is the base rate from the select element
+        // Scale slightly by LTV
+        if (ltv <= 0.85) return creditRateBase * 0.6;
+        if (ltv <= 0.90) return creditRateBase * 0.85;
+        if (ltv <= 0.95) return creditRateBase * 1.0;
+        return creditRateBase * 1.15; // >95% LTV
+    }
+
+    // ── Monthly P&I payment ────────────────────────────────────────────────────
+    function calcPI(principal, annualRate, termYears) {
+        const r = annualRate / 100 / 12;
+        const n = termYears * 12;
+        if (r === 0) return principal / n;
+        return principal * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    }
+
+    // ── Calculate months to reach target LTV ─────────────────────────────────
+    function monthsToLTV(principal, annualRate, termYears, originalPrice, targetLTV) {
+        const r = annualRate / 100 / 12;
+        const n = termYears * 12;
+        const payment = calcPI(principal, annualRate, termYears);
+        const targetBalance = originalPrice * targetLTV;
+        let balance = principal;
+        for (let m = 1; m <= n; m++) {
+            const interest = balance * r;
+            const principalPaid = payment - interest;
+            balance -= principalPaid;
+            if (balance <= targetBalance) return m;
+        }
+        return n; // never reaches it within term
+    }
+
+    function addMonths(date, months) {
+        const d = new Date(date);
+        d.setMonth(d.getMonth() + months);
+        return d.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+    }
+
+    // ── Main calculate ─────────────────────────────────────────────────────────
+    document.getElementById('calcBtn').addEventListener('click', calculate);
+    ['homePrice', 'downPayment', 'interestRate'].forEach(id => {
+        document.getElementById(id).addEventListener('keydown', e => {
+            if (e.key === 'Enter') calculate();
+        });
+    });
+
+    function calculate() {
+        const homePrice = parseMoney(document.getElementById('homePrice').value);
+        const rate = parseMoney(document.getElementById('interestRate').value) || 6.46;
+        const creditRateBase = parseFloat(document.getElementById('creditScore').value);
+
+        let dpRaw = parseMoney(document.getElementById('downPayment').value);
+        let downPayment = dpMode === '%' ? homePrice * (dpRaw / 100) : dpRaw;
+        let downPct = downPayment / homePrice;
+
+        if (!homePrice || homePrice <= 0) {
+            alert('Please enter a valid home price.');
+            return;
+        }
+        if (!downPayment || downPayment <= 0) {
+            alert('Please enter a down payment.');
+            return;
+        }
+
+        const loanAmount = homePrice - downPayment;
+        const ltv = loanAmount / homePrice;
+
+        // Hide both result cards first
+        document.getElementById('resultsCard').style.display = 'none';
+        document.getElementById('noPmiCard').style.display = 'none';
+
+        // No PMI scenario
+        if (downPct >= 0.20) {
+            // Show savings vs 10% down
+            const loan10 = homePrice * 0.90;
+            const pmi10Rate = getPMIRate(0.90, creditRateBase);
+            const monthlyPMI10 = (loan10 * pmi10Rate / 100) / 12;
+            document.getElementById('pmiSavings').textContent = fmt(monthlyPMI10).replace('$','') + '/month';
+            document.getElementById('noPmiCard').style.display = 'block';
+            document.getElementById('noPmiCard').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            return;
+        }
+
+        // PMI rate
+        const pmiRate = getPMIRate(ltv, creditRateBase);
+        const monthlyPMI = (loanAmount * pmiRate / 100) / 12;
+        const monthlyPI = calcPI(loanAmount, rate, loanTerm);
+        const monthlyTotal = monthlyPI + monthlyPMI;
+
+        // Cancellation dates
+        const now = new Date();
+        const monthsTo80 = monthsToLTV(loanAmount, rate, loanTerm, homePrice, 0.80);
+        const monthsTo78 = monthsToLTV(loanAmount, rate, loanTerm, homePrice, 0.78);
+        const totalPMIPaid = monthlyPMI * monthsTo78;
+
+        // 20% down comparison
+        const dp20 = homePrice * 0.20;
+        const loan20 = homePrice * 0.80;
+        const pi20 = calcPI(loan20, rate, loanTerm);
+        const extraDownNeeded = dp20 - downPayment;
+        const monthlySavings = monthlyPMI + (monthlyPI - pi20); // PMI gone + lower payment
+        const breakEvenMonths = extraDownNeeded > 0 ? Math.ceil(extraDownNeeded / monthlySavings) : 0;
+
+        // ── Render ─────────────────────────────────────────────────────────────
+        document.getElementById('monthlyPMI').textContent = fmt(monthlyPMI);
+        document.getElementById('monthlyPMISub').textContent = `${fmtPct(pmiRate)} annual PMI rate on ${fmt(loanAmount)} loan`;
+        document.getElementById('monthlyPI').textContent = fmt(monthlyPI);
+        document.getElementById('monthlyTotal').textContent = fmt(monthlyTotal);
+        document.getElementById('pmiRate').textContent = fmtPct(pmiRate);
+        document.getElementById('downPct').textContent = fmtPct(downPct * 100);
+
+        document.getElementById('cancelDate').textContent = addMonths(now, monthsTo80);
+        document.getElementById('autoDate').textContent = addMonths(now, monthsTo78);
+        document.getElementById('totalPMI').textContent = fmt(totalPMIPaid);
+
+        // Equity bar
+        const equityPct = Math.min((downPct / 0.20) * 100, 100);
+        document.getElementById('equityBar').style.width = equityPct + '%';
+        document.getElementById('equityNow').textContent = `Current equity: ${fmtPct(downPct * 100)}`;
+
+        // Comparison box
+        const compHtml = extraDownNeeded > 0 ? `
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; text-align: center;">
+                <div>
+                    <div style="font-size: 0.8rem; color: #777; margin-bottom: 5px;">Extra Down Needed for 20%</div>
+                    <div style="font-size: 1.4rem; font-weight: 700; color: #ffb74d;">${fmt(extraDownNeeded)}</div>
+                </div>
+                <div>
+                    <div style="font-size: 0.8rem; color: #777; margin-bottom: 5px;">Monthly Savings at 20%</div>
+                    <div style="font-size: 1.4rem; font-weight: 700; color: #66bb6a;">${fmt(monthlySavings)}/mo</div>
+                    <div style="font-size: 0.75rem; color: #666;">No PMI + smaller loan</div>
+                </div>
+                <div>
+                    <div style="font-size: 0.8rem; color: #777; margin-bottom: 5px;">Break-Even on Extra Down</div>
+                    <div style="font-size: 1.4rem; font-weight: 700; color: #4fc3f7;">${breakEvenMonths} months</div>
+                    <div style="font-size: 0.75rem; color: #666;">${(breakEvenMonths/12).toFixed(1)} years</div>
+                </div>
+            </div>
+            <p style="color: #888; font-size: 0.82rem; margin-top: 15px; text-align: center;">
+                If you put ${fmt(dp20)} down instead of ${fmt(downPayment)}, you'd save ${fmt(monthlySavings)}/month.
+                The extra ${fmt(extraDownNeeded)} pays for itself in ${breakEvenMonths} months.
+                ${breakEvenMonths < 60 ? ' Worth it if you stay long-term.' : ' If you stay less than 5 years, PMI may be the better path.'}
+            </p>
+        ` : `<p style="color: #66bb6a; text-align: center;">You're at 20%+ down — no PMI comparison needed.</p>`;
+
+        document.getElementById('comparisonBox').innerHTML = compHtml;
+        document.getElementById('resultsCard').style.display = 'block';
+        document.getElementById('resultsCard').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    </script>
+</body>
+</html>

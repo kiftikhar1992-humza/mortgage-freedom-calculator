@@ -5,13 +5,49 @@
     <link>https://mortgagefreedomcalculator.com/blog/</link>
     <description>Tips and strategies to pay off your mortgage faster, save thousands in interest, and achieve financial freedom.</description>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Mar 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://mortgagefreedomcalculator.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <image>
       <url>https://mortgagefreedomcalculator.com/og-image.png</url>
       <title>Mortgage Freedom Calculator Blog</title>
       <link>https://mortgagefreedomcalculator.com/blog/</link>
     </image>
+
+    <item>
+      <title>Single Income Home Buyer: How Much Can You Really Afford?</title>
+      <link>https://mortgagefreedomcalculator.com/blog/single-income-home-buyer/</link>
+      <guid isPermaLink="true">https://mortgagefreedomcalculator.com/blog/single-income-home-buyer/</guid>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The bank will tell you the maximum you qualify for. That number is not what you should borrow. Here's the honest math on what different single incomes can actually afford in 2026, plus the programs and strategies that make homeownership work on one paycheck.</description>
+      <category>Home Affordability</category>
+    </item>
+
+    <item>
+      <title>Should I Buy a House with a Baby on the Way?</title>
+      <link>https://mortgagefreedomcalculator.com/blog/buying-house-with-baby-on-the-way/</link>
+      <guid isPermaLink="true">https://mortgagefreedomcalculator.com/blog/buying-house-with-baby-on-the-way/</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <description>The nesting instinct is real — but so is the financial risk of rushing into a mortgage while expecting. Here's the honest math on baby costs, how a child changes your qualification, and how to decide without letting emotion make the call.</description>
+      <category>Home Buying</category>
+    </item>
+
+    <item>
+      <title>Is PMI Really That Bad? The Honest Math</title>
+      <link>https://mortgagefreedomcalculator.com/blog/pmi-explained/</link>
+      <guid isPermaLink="true">https://mortgagefreedomcalculator.com/blog/pmi-explained/</guid>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Reddit keeps asking: how bad is PMI, really? We ran the actual numbers. Monthly cost, when it cancels, total PMI paid, and whether waiting to put 20% down actually makes financial sense.</description>
+      <category>Mortgage Education</category>
+    </item>
+
+    <item>
+      <title>The Spring 2026 Window: Is This the Best Buying Opportunity in 3 Years?</title>
+      <link>https://mortgagefreedomcalculator.com/blog/spring-2026-buying-window/</link>
+      <guid isPermaLink="true">https://mortgagefreedomcalculator.com/blog/spring-2026-buying-window/</guid>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 GMT</pubDate>
+      <description>Inventory is up 8%, builders are cutting prices, and sellers are offering concessions. Despite rates at 6.46%, spring 2026 may be the most buyer-friendly market since 2023. Here's what the data shows.</description>
+      <category>Housing Market</category>
+    </item>
 
     <item>
       <title>What's Really Driving Mortgage Rates in 2026: Geopolitics, Tariffs, and a Fed Playing Defense</title>
